@@ -27,16 +27,16 @@ const steps = [
 >
   
   <!-- Header Hero -->
-  <section class="bg-gradient-to-b from-purple-950 via-purple-900 to-purple-950 text-white pt-16 pb-20 border-b border-purple-800 relative overflow-hidden">
+  <section class="bg-corporate-midnight text-white pt-16 pb-20 border-b border-purple-900/60 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl mx-auto text-center space-y-4">
-        <span class="text-xs font-bold uppercase tracking-widest text-purple-200 bg-purple-900/80 px-3.5 py-1 rounded-full border border-purple-700">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-300 bg-purple-900/80 px-3.5 py-1 rounded-full border border-purple-700">
           Atención Directa C-Level
         </span>
         <h1 class="text-3xl sm:text-5xl font-extrabold font-display">
           Agende un Diagnóstico Estratégico de TI
         </h1>
-        <p class="text-base sm:text-lg text-purple-100">
+        <p class="text-base sm:text-lg text-slate-300">
           Coordine una sesión privada con nuestros Directores de Arquitectura para abordar sus desafíos de desarrollo, procesos batch o infraestructura.
         </p>
       </div>
@@ -44,7 +44,7 @@ const steps = [
   </section>
 
   <!-- Process Steps -->
-  <section class="py-12 bg-white border-b border-purple-100">
+  <section class="py-12 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((st) => (
@@ -53,7 +53,7 @@ const steps = [
               {st.step}
             </span>
             <div>
-              <h3 class="text-base font-bold text-corporate-purple-dark font-display mb-1">{st.title}</h3>
+              <h3 class="text-base font-bold text-corporate-midnight font-display mb-1">{st.title}</h3>
               <p class="text-xs text-slate-600 leading-relaxed">{st.desc}</p>
             </div>
           </div>
@@ -70,8 +70,8 @@ const steps = [
         <!-- Left: Direct Info -->
         <div class="lg:col-span-5 space-y-8">
           
-          <div class="bg-corporate-purple-dark text-white rounded-3xl p-8 shadow-purple-card space-y-6">
-            <h2 class="text-2xl font-bold font-display text-white border-b border-purple-900 pb-4">
+          <div class="bg-corporate-midnight text-white rounded-3xl p-8 shadow-purple-card space-y-6">
+            <h2 class="text-2xl font-bold font-display text-white border-b border-slate-800 pb-4">
               Canales Directos de Comunicación
             </h2>
 
@@ -83,7 +83,7 @@ const steps = [
                   </svg>
                 </div>
                 <div>
-                  <span class="text-xs text-purple-300 block uppercase font-semibold">Atención Telefónica Directa</span>
+                  <span class="text-xs text-slate-400 block uppercase font-semibold">Atención Telefónica Directa</span>
                   <a href="tel:+525512345678" class="text-lg font-bold text-white hover:text-purple-300 transition-colors">+52 (55) 1234-5678</a>
                 </div>
               </div>
@@ -96,7 +96,7 @@ const steps = [
                   </svg>
                 </div>
                 <div>
-                  <span class="text-xs text-purple-300 block uppercase font-semibold">Correo Corporativo C-Level</span>
+                  <span class="text-xs text-slate-400 block uppercase font-semibold">Correo Corporativo C-Level</span>
                   <a href="mailto:contacto@softelligent-business.com.mx" class="text-sm font-bold text-white hover:text-purple-300 transition-colors">contacto@softelligent-business.com.mx</a>
                 </div>
               </div>
@@ -109,13 +109,13 @@ const steps = [
                   </svg>
                 </div>
                 <div>
-                  <span class="text-xs text-purple-300 block uppercase font-semibold">Oficinas Centrales</span>
-                  <span class="text-sm text-purple-100">Ciudad de México, México (Servicios Nacionales e Internacionales)</span>
+                  <span class="text-xs text-slate-400 block uppercase font-semibold">Oficinas Centrales</span>
+                  <span class="text-sm text-slate-300">Ciudad de México, México (Servicios Nacionales e Internacionales)</span>
                 </div>
               </div>
             </div>
 
-            <div class="pt-4 border-t border-purple-900 space-y-3">
+            <div class="pt-4 border-t border-slate-800 space-y-3">
               <div class="flex items-center gap-2 text-xs text-purple-300">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -123,7 +123,7 @@ const steps = [
                 </svg>
                 <span>Respuesta en menos de 24 horas hábiles</span>
               </div>
-              <div class="flex items-center gap-2 text-xs text-purple-300/80">
+              <div class="flex items-center gap-2 text-xs text-slate-400">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
@@ -134,8 +134,8 @@ const steps = [
 
           </div>
 
-          <div class="bg-white p-6 rounded-2xl border border-purple-100 shadow-sm space-y-3">
-            <h3 class="text-base font-bold text-corporate-purple-dark font-display">Garantía de Confidencialidad NDA</h3>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+            <h3 class="text-base font-bold text-corporate-midnight font-display">Garantía de Confidencialidad NDA</h3>
             <p class="text-xs text-slate-600 leading-relaxed">
               Toda la información compartida durante el proceso de diagnóstico está protegida legalmente. Firmamos convenios NDA antes de revisar repositorios o arquitecturas.
             </p>

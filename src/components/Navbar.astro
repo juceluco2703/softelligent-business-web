@@ -10,7 +10,7 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-purple-100/80 text-corporate-text shadow-sm transition-all duration-300">
+<header class="sticky top-0 z-50 bg-corporate-midnight/95 backdrop-blur-md border-b border-purple-900/40 text-white transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       
@@ -25,10 +25,10 @@ const currentPath = Astro.url.pathname;
           </svg>
         </div>
         <div class="flex flex-col">
-          <span class="text-xl font-bold tracking-tight text-corporate-purple-dark font-display group-hover:text-corporate-purple transition-colors">
+          <span class="text-xl font-bold tracking-tight text-white font-display group-hover:text-purple-300 transition-colors">
             SOFTELLIGENT
           </span>
-          <span class="text-[10px] tracking-widest uppercase font-bold text-corporate-purple -mt-1">
+          <span class="text-[10px] tracking-widest uppercase font-bold text-purple-300 -mt-1">
             Business Solutions
           </span>
         </div>
@@ -43,8 +43,8 @@ const currentPath = Astro.url.pathname;
               href={item.href}
               class={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 isActive
-                  ? 'text-corporate-purple font-semibold bg-purple-50 border border-purple-200/60 shadow-xs'
-                  : 'text-slate-700 hover:text-corporate-purple hover:bg-purple-50/50'
+                  ? 'text-white bg-purple-900/60 border border-purple-500/40 shadow-xs'
+                  : 'text-slate-300 hover:text-white hover:bg-white/10'
               }`}
             >
               {item.name}
@@ -57,7 +57,7 @@ const currentPath = Astro.url.pathname;
       <div class="hidden sm:flex items-center gap-4">
         <a
           href="/contacto"
-          class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-corporate-purple to-corporate-purple-light hover:from-purple-900 hover:to-purple-800 shadow-purple-glow transition-all duration-300 hover:-translate-y-0.5"
+          class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-corporate-purple to-corporate-purple-light hover:from-purple-700 hover:to-purple-600 shadow-purple-glow transition-all duration-300 hover:-translate-y-0.5"
         >
           <!-- Phone Icon -->
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -76,7 +76,7 @@ const currentPath = Astro.url.pathname;
         <button
           id="mobile-menu-btn"
           type="button"
-          class="p-2 rounded-lg text-slate-700 hover:text-corporate-purple hover:bg-purple-50 focus:outline-none"
+          class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none"
           aria-label="Abrir menú"
         >
           <svg id="menu-icon-open" class="w-7 h-7 block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -94,7 +94,7 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <!-- Mobile Navigation Drawer -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-purple-100 px-4 pt-2 pb-6 space-y-3">
+  <div id="mobile-menu" class="hidden lg:hidden bg-corporate-midnight border-b border-purple-900/60 px-4 pt-2 pb-6 space-y-3">
     {navItems.map((item) => {
       const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
       return (
@@ -102,15 +102,15 @@ const currentPath = Astro.url.pathname;
           href={item.href}
           class={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${
             isActive
-              ? 'text-corporate-purple bg-purple-50 border-l-4 border-corporate-purple font-semibold'
-              : 'text-slate-700 hover:text-corporate-purple hover:bg-purple-50/50'
+              ? 'text-white bg-purple-900/80 border-l-4 border-corporate-purple font-semibold'
+              : 'text-slate-300 hover:text-white hover:bg-white/10'
           }`}
         >
           {item.name}
         </a>
       );
     })}
-    <div class="pt-4 border-t border-purple-100">
+    <div class="pt-4 border-t border-purple-900/60">
       <a
         href="/contacto"
         class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-base text-white bg-gradient-to-r from-corporate-purple to-corporate-purple-light shadow-purple-glow"

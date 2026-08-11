@@ -5,17 +5,18 @@ export default {
     extend: {
       colors: {
         corporate: {
-          purple: '#6B21A8',        // Morado Oficial Softelligent
-          'purple-light': '#7E22CE',  // Morado Brillante
-          'purple-accent': '#A855F7', // Púrpura de Acento
-          'purple-dark': '#3B0764',   // Morado Oscuro / Encabezados
-          'purple-soft': '#F3E8FF',   // Fondo Suave Morado
-          'purple-ultralight': '#FAF5FF',
-          bg: '#FFFFFF',              // Fondo Blanco Limpio
-          light: '#FAFAF9',           // Gris Claro / Contenedores
-          slate: '#F1F5F9',           // Gris Estructura
-          text: '#1E293B',            // Texto Principal
-          muted: '#64748B',           // Texto Secundario
+          purple: '#7C3AED',          // Morado Vibrante Principal
+          'purple-light': '#8B5CF6',    // Morado Claro
+          'purple-dark': '#6D28D9',     // Morado Oscuro
+          'purple-soft': '#F5F3FF',     // Fondo Morado Suave
+          'purple-border': '#DDD6FE',   // Borde Sutil Morado
+          midnight: '#0F172A',          // Fondo Navbar & Footer / Encabezados Noche
+          navy: '#1E1B4B',              // Azul Noche Corporativo
+          bg: '#FFFFFF',                // Blanco Puro
+          light: '#F8FAFC',             // Gris Ultra Claro
+          slate: '#F1F5F9',             // Gris Estructura
+          text: '#1E293B',              // Texto Cuerpo
+          muted: '#64748B',             // Texto Muted
         },
       },
       fontFamily: {
@@ -23,8 +24,8 @@ export default {
         display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'purple-glow': '0 10px 30px -5px rgba(107, 33, 168, 0.25)',
-        'purple-card': '0 4px 20px -2px rgba(107, 33, 168, 0.08)',
+        'purple-glow': '0 10px 30px -5px rgba(124, 58, 237, 0.25)',
+        'purple-card': '0 4px 20px -2px rgba(124, 58, 237, 0.08)',
       }
     },
   },
