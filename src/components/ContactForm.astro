@@ -12,17 +12,17 @@ const {
 } = Astro.props;
 ---
 
-<div class="bg-white rounded-3xl p-6 sm:p-10 shadow-purple-card border border-purple-100 relative overflow-hidden">
+<div class="bg-white rounded-3xl p-6 sm:p-10 shadow-google-card border border-slate-200/80 relative overflow-hidden">
   
   <!-- Form Header -->
   <div class="mb-8 space-y-2">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-50 border border-purple-200 text-corporate-purple text-xs font-bold">
-      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-corporate-wine-soft border border-corporate-wine-border text-corporate-wine text-xs font-bold">
+      <svg class="w-3.5 h-3.5 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
       </svg>
       <span>Sesión Privada para Ejecutivos</span>
     </div>
-    <h3 class="text-2xl sm:text-3xl font-extrabold text-corporate-purple-dark font-display">
+    <h3 class="text-2xl sm:text-3xl font-extrabold text-corporate-midnight font-display">
       {title}
     </h3>
     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -36,7 +36,7 @@ const {
       
       <!-- Nombre Completo -->
       <div>
-        <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-corporate-purple-dark mb-2">
+        <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-corporate-midnight mb-2">
           Nombre Completo *
         </label>
         <input
@@ -45,13 +45,13 @@ const {
           name="nombre"
           required
           placeholder="Ej. Ing. Carlos Mendoza"
-          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-purple focus:ring-2 focus:ring-corporate-purple/20 text-slate-800 text-sm outline-none transition-all"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-wine focus:ring-2 focus:ring-corporate-wine/20 text-slate-800 text-sm outline-none transition-all"
         />
       </div>
 
       <!-- Correo Corporativo -->
       <div>
-        <label for="email" class="block text-xs font-bold uppercase tracking-wider text-corporate-purple-dark mb-2">
+        <label for="email" class="block text-xs font-bold uppercase tracking-wider text-corporate-midnight mb-2">
           Correo Corporativo *
         </label>
         <input
@@ -60,7 +60,7 @@ const {
           name="email"
           required
           placeholder="carlos.mendoza@empresa.com"
-          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-purple focus:ring-2 focus:ring-corporate-purple/20 text-slate-800 text-sm outline-none transition-all"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-wine focus:ring-2 focus:ring-corporate-wine/20 text-slate-800 text-sm outline-none transition-all"
         />
       </div>
 
@@ -70,7 +70,7 @@ const {
       
       <!-- Empresa -->
       <div>
-        <label for="empresa" class="block text-xs font-bold uppercase tracking-wider text-corporate-purple-dark mb-2">
+        <label for="empresa" class="block text-xs font-bold uppercase tracking-wider text-corporate-midnight mb-2">
           Empresa / Organización *
         </label>
         <input
@@ -79,13 +79,13 @@ const {
           name="empresa"
           required
           placeholder="Ej. Banco del Norte S.A."
-          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-purple focus:ring-2 focus:ring-corporate-purple/20 text-slate-800 text-sm outline-none transition-all"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-wine focus:ring-2 focus:ring-corporate-wine/20 text-slate-800 text-sm outline-none transition-all"
         />
       </div>
 
       <!-- Teléfono / WhatsApp -->
       <div>
-        <label for="telefono" class="block text-xs font-bold uppercase tracking-wider text-corporate-purple-dark mb-2">
+        <label for="telefono" class="block text-xs font-bold uppercase tracking-wider text-corporate-midnight mb-2">
           Teléfono Directo / WhatsApp *
         </label>
         <input
@@ -94,7 +94,7 @@ const {
           name="telefono"
           required
           placeholder="+52 55 9876 5432"
-          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-purple focus:ring-2 focus:ring-corporate-purple/20 text-slate-800 text-sm outline-none transition-all"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-wine focus:ring-2 focus:ring-corporate-wine/20 text-slate-800 text-sm outline-none transition-all"
         />
       </div>
 
@@ -104,14 +104,14 @@ const {
       
       <!-- Cargo Directivo -->
       <div>
-        <label for="cargo" class="block text-xs font-bold uppercase tracking-wider text-corporate-purple-dark mb-2">
+        <label for="cargo" class="block text-xs font-bold uppercase tracking-wider text-corporate-midnight mb-2">
           Cargo Executive / Rol *
         </label>
         <select
           id="cargo"
           name="cargo"
           required
-          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-purple focus:ring-2 focus:ring-corporate-purple/20 text-slate-800 text-sm outline-none transition-all bg-white"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-wine focus:ring-2 focus:ring-corporate-wine/20 text-slate-800 text-sm outline-none transition-all bg-white"
         >
           <option value="">Seleccione su rol...</option>
           <option value="CEO">CEO / Director General</option>
@@ -125,14 +125,14 @@ const {
 
       <!-- Servicio de Interés -->
       <div>
-        <label for="servicio" class="block text-xs font-bold uppercase tracking-wider text-corporate-purple-dark mb-2">
+        <label for="servicio" class="block text-xs font-bold uppercase tracking-wider text-corporate-midnight mb-2">
           Servicio de Interés *
         </label>
         <select
           id="servicio"
           name="servicio"
           required
-          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-purple focus:ring-2 focus:ring-corporate-purple/20 text-slate-800 text-sm outline-none transition-all bg-white"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-wine focus:ring-2 focus:ring-corporate-wine/20 text-slate-800 text-sm outline-none transition-all bg-white"
         >
           <option value="Fabrica de Software" selected={defaultService === "Fabrica de Software"}>Fábrica de Software a la Medida</option>
           <option value="Oracle Batch ProC" selected={defaultService === "Oracle Batch ProC"}>Desarrollo Batch Oracle SQL & Pro*C</option>
@@ -146,7 +146,7 @@ const {
 
     <!-- Descripción del Proyecto -->
     <div>
-      <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-corporate-purple-dark mb-2">
+      <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-corporate-midnight mb-2">
         Descripción del Proyecto o Desafío Técnico *
       </label>
       <textarea
@@ -155,7 +155,7 @@ const {
         rows="4"
         required
         placeholder="Describa brevemente el objetivo, volumen de datos o requerimiento de su empresa..."
-        class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-purple focus:ring-2 focus:ring-corporate-purple/20 text-slate-800 text-sm outline-none transition-all"
+        class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-wine focus:ring-2 focus:ring-corporate-wine/20 text-slate-800 text-sm outline-none transition-all"
       ></textarea>
     </div>
 
@@ -167,18 +167,18 @@ const {
         name="privacidad"
         required
         checked
-        class="mt-1 w-4 h-4 text-corporate-purple border-slate-300 rounded focus:ring-corporate-purple"
+        class="mt-1 w-4 h-4 text-corporate-wine border-slate-300 rounded focus:ring-corporate-wine"
       />
       <label for="privacidad" class="text-xs text-slate-600 leading-normal">
         Acepto las políticas de confidencialidad y el tratamiento de datos para la coordinación del diagnóstico corporativo.
       </label>
     </div>
 
-    <!-- Submit Button -->
+    <!-- Submit Button (Google Store Pill Button Style) -->
     <button
       type="submit"
       id="submit-btn"
-      class="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-white bg-gradient-to-r from-corporate-purple to-corporate-purple-light hover:from-purple-900 hover:to-purple-800 shadow-purple-glow transition-all duration-300 group"
+      class="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-base text-white bg-corporate-wine hover:bg-corporate-wine-light shadow-wine-glow transition-all duration-300 group"
     >
       <svg class="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
         <line x1="22" x2="11" y1="2" y2="13" />
@@ -188,14 +188,14 @@ const {
     </button>
 
     <!-- Success Message Banner -->
-    <div id="form-success" class="hidden p-4 rounded-xl bg-purple-50 border border-purple-200 text-purple-950 text-sm flex items-center gap-3">
-      <svg class="w-6 h-6 text-corporate-purple shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <div id="form-success" class="hidden p-4 rounded-xl bg-corporate-wine-soft border border-corporate-wine-border text-corporate-wine text-sm flex items-center gap-3">
+      <svg class="w-6 h-6 text-corporate-wine shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
         <polyline points="22 4 12 14.01 9 11.01" />
       </svg>
       <div>
-        <strong class="font-bold text-corporate-purple-dark">¡Solicitud recibida con éxito!</strong>
-        <p class="text-xs text-purple-900">Un Director de Arquitectura TI de Softelligent Business se pondrá en contacto en menos de 24 horas.</p>
+        <strong class="font-bold text-corporate-wine">¡Solicitud recibida con éxito!</strong>
+        <p class="text-xs text-slate-700">Un Director de Arquitectura TI de Softelligent Business se pondrá en contacto en menos de 24 horas.</p>
       </div>
     </div>
 

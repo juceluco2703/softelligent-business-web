@@ -19,26 +19,26 @@ const metrics = [
 ];
 ---
 
-<section class="relative bg-white text-corporate-midnight pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
-  <!-- Soft Glowing aura -->
-  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-100/70 rounded-full blur-[140px] pointer-events-none"></div>
+<section class="relative bg-white text-corporate-midnight pt-14 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
+  <!-- Minimal Google Store Style Soft Aura -->
+  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-pink-100/40 rounded-full blur-[150px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center max-w-4xl mx-auto space-y-6">
+    <div class="text-center max-w-4xl mx-auto space-y-8">
       
-      <!-- Top Executive Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-corporate-purple text-xs font-bold tracking-wider uppercase shadow-xs">
-        <svg class="w-4 h-4 text-corporate-purple animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <!-- Top Executive Badge (Google Store Pill Style) -->
+      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-corporate-wine-soft border border-corporate-wine-border text-corporate-wine text-xs font-bold tracking-widest uppercase shadow-xs">
+        <svg class="w-4 h-4 text-corporate-wine animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
         </svg>
         <span>{badge}</span>
       </div>
 
       <!-- Main H1 Title -->
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-corporate-midnight leading-[1.15]">
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-display text-corporate-midnight leading-[1.12]">
         {title.split("en").length > 1 ? (
           <>
-            {title.split("en")[0]} <span class="bg-gradient-to-r from-corporate-purple via-purple-600 to-corporate-purple-dark bg-clip-text text-transparent">en {title.split("en").slice(1).join("en")}</span>
+            {title.split("en")[0]} <span class="text-corporate-wine">en {title.split("en").slice(1).join("en")}</span>
           </>
         ) : (
           title
@@ -46,27 +46,27 @@ const metrics = [
       </h1>
 
       <!-- Transactional Subtitle -->
-      <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto">
+      <p class="text-lg sm:text-2xl text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto">
         {subtitle}
       </p>
 
-      <!-- CTA Buttons -->
+      <!-- CTA Buttons (Google Store Pill Style) -->
       <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="/contacto"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-white bg-gradient-to-r from-corporate-purple to-corporate-purple-dark hover:from-purple-700 hover:to-purple-800 shadow-purple-glow transition-all duration-300 hover:-translate-y-1"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full font-bold text-base text-white bg-corporate-wine hover:bg-corporate-wine-light shadow-wine-glow transition-all duration-300 hover:-translate-y-0.5"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
           <span>Agendar Diagnóstico Estratégico</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
         <a
           href="#soluciones"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-semibold text-base text-corporate-midnight bg-corporate-light hover:bg-slate-100 border border-slate-200 transition-all duration-300"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base text-corporate-midnight bg-corporate-light hover:bg-slate-100 border border-slate-200 transition-all duration-300"
         >
           <span>Explorar Soluciones B2B</span>
         </a>
@@ -75,21 +75,21 @@ const metrics = [
       <!-- Trust highlights -->
       <div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-600 font-medium">
         <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-corporate-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
             <path d="m9 12 2 2 4-4" />
           </svg>
           Células de Desarrollo Ágil Dedicadas
         </span>
         <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-corporate-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             <path d="m9 12 2 2 4-4" />
           </svg>
           Cumplimiento Riguroso de SLAs
         </span>
         <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-corporate-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <ellipse cx="12" cy="5" rx="9" ry="3" />
             <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
@@ -100,17 +100,17 @@ const metrics = [
 
     </div>
 
-    <!-- Executive Metrics Grid -->
-    <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <!-- Executive Metrics Grid (Google Store Card Style) -->
+    <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6">
       {metrics.map((m) => (
-        <div class="bg-white border border-slate-200/90 p-6 rounded-2xl text-center shadow-purple-card hover:shadow-purple-glow hover:border-purple-300 transition-all duration-300 group">
-          <div class="text-3xl sm:text-4xl font-extrabold font-display text-corporate-purple group-hover:scale-105 transition-transform">
+        <div class="bg-white border border-slate-200/80 p-8 rounded-3xl text-center shadow-google-card hover:shadow-google-hover transition-all duration-300 group">
+          <div class="text-4xl sm:text-5xl font-extrabold font-display text-corporate-wine group-hover:scale-105 transition-transform">
             {m.value}
           </div>
-          <div class="text-sm font-bold text-corporate-midnight mt-1">
+          <div class="text-sm font-bold text-corporate-midnight mt-2">
             {m.label}
           </div>
-          <div class="text-xs text-slate-500 mt-0.5">
+          <div class="text-xs text-slate-500 mt-1">
             {m.detail}
           </div>
         </div>

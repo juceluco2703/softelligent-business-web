@@ -6,7 +6,7 @@ const roles = [
     title: "Agilidad Estratégica y Aceleración del Time-to-Market",
     badge: "Estrategia & Crecimiento",
     type: "trending",
-    color: "from-purple-800 to-purple-600",
+    color: "bg-corporate-wine",
     benefits: [
       "Aceleración en el lanzamiento de nuevos productos y canales digitales.",
       "Cero riesgo operativo mediante procesos de ingeniería validados.",
@@ -21,7 +21,7 @@ const roles = [
     title: "Arquitectura Robusta y Reducción de Deuda Técnica",
     badge: "Ingeniería & Operaciones",
     type: "shield",
-    color: "from-purple-900 to-purple-700",
+    color: "bg-corporate-wine-light",
     benefits: [
       "Optimización de procesos batch Oracle SQL y Pro*C con cero fallos.",
       "Células dedicadas senior de integración inmediata sin curva de aprendizaje.",
@@ -36,7 +36,7 @@ const roles = [
     title: "Optimización Presupuestal y ROI Medible en 90 Días",
     badge: "Finanzas & Eficiencia",
     type: "dollar",
-    color: "from-purple-700 to-purple-500",
+    color: "bg-corporate-wine-accent",
     benefits: [
       "Estructura de costos transparentes y predecibles sin cargos ocultos.",
       "Maximización del ROI existente en infraestructura Oracle y servidores enterprise.",
@@ -53,10 +53,10 @@ const roles = [
     
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-      <span class="text-xs font-bold uppercase tracking-widest text-corporate-purple bg-purple-100 px-3.5 py-1 rounded-full border border-purple-200">
+      <span class="text-xs font-bold uppercase tracking-widest text-corporate-wine bg-corporate-wine-soft px-4 py-1.5 rounded-full border border-corporate-wine-border">
         Matriz de Valor C-Level
       </span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-corporate-purple-dark font-display">
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-corporate-midnight font-display">
         Respuesta Exacta a las Prioridades de la Alta Dirección
       </h2>
       <p class="text-slate-600 text-base sm:text-lg">
@@ -64,17 +64,17 @@ const roles = [
       </p>
     </div>
 
-    <!-- Cards Grid -->
+    <!-- Cards Grid (Google Store Style) -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {roles.map((item) => (
-        <div class="bg-white rounded-3xl p-8 shadow-purple-card hover:shadow-purple-glow border border-purple-100 hover:border-purple-300 transition-all duration-300 flex flex-col justify-between group">
+        <div class="bg-white rounded-3xl p-8 shadow-google-card hover:shadow-google-hover border border-slate-200/80 transition-all duration-300 flex flex-col justify-between group">
           <div>
             <!-- Badge & Icon Header -->
             <div class="flex items-center justify-between mb-6">
-              <span class="text-xs font-semibold text-purple-900 uppercase tracking-wider bg-purple-50 px-3 py-1 rounded-lg border border-purple-100">
+              <span class="text-xs font-semibold text-corporate-wine uppercase tracking-wider bg-corporate-wine-soft px-3.5 py-1 rounded-full border border-corporate-wine-border">
                 {item.badge}
               </span>
-              <div class={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform`}>
+              <div class={`w-12 h-12 rounded-2xl ${item.color} flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform`}>
                 {item.type === 'trending' && (
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
@@ -97,10 +97,10 @@ const roles = [
             </div>
 
             <!-- Role & Title -->
-            <span class="text-xs font-bold text-corporate-purple uppercase tracking-wider block mb-1">
+            <span class="text-xs font-bold text-corporate-wine uppercase tracking-wider block mb-2">
               {item.role}
             </span>
-            <h3 class="text-xl font-bold text-corporate-purple-dark font-display mb-6 group-hover:text-corporate-purple transition-colors">
+            <h3 class="text-xl font-bold text-corporate-midnight font-display mb-6 group-hover:text-corporate-wine transition-colors">
               {item.title}
             </h3>
 
@@ -108,7 +108,7 @@ const roles = [
             <ul class="space-y-3 mb-8">
               {item.benefits.map((benefit) => (
                 <li class="flex items-start gap-3 text-sm text-slate-700">
-                  <svg class="w-5 h-5 text-corporate-purple shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <svg class="w-5 h-5 text-corporate-wine shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
                     <path d="m9 12 2 2 4-4" />
                   </svg>
@@ -119,14 +119,14 @@ const roles = [
           </div>
 
           <!-- Bottom Metric & CTA -->
-          <div class="pt-6 border-t border-purple-100 flex items-center justify-between">
+          <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
             <div>
               <span class="text-xs text-slate-400 block font-medium">Impacto Garantizado</span>
-              <span class="text-sm font-extrabold text-corporate-purple-dark font-display">{item.metric}</span>
+              <span class="text-sm font-extrabold text-corporate-midnight font-display">{item.metric}</span>
             </div>
             <a
               href="/contacto"
-              class="inline-flex items-center gap-1.5 text-xs font-bold text-corporate-purple hover:text-purple-900 transition-colors group-hover:translate-x-1 transition-transform"
+              class="inline-flex items-center gap-1.5 text-xs font-bold text-corporate-wine hover:text-corporate-wine-light transition-colors group-hover:translate-x-1 transition-transform"
             >
               <span>Solicitar Informe</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">

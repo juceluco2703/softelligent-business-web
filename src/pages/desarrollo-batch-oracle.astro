@@ -39,14 +39,14 @@ const useCases = [
 >
   
   <!-- Subpage Hero -->
-  <section class="bg-corporate-midnight text-white pt-16 pb-20 border-b border-purple-900/60 relative overflow-hidden">
-    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+  <section class="bg-corporate-wine text-white pt-16 pb-20 border-b border-white/10 relative overflow-hidden">
+    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl space-y-6">
         
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-900/80 border border-purple-700 text-purple-300 text-xs font-bold uppercase tracking-wider">
-          <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-purple-100 text-xs font-bold uppercase tracking-wider">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <ellipse cx="12" cy="5" rx="9" ry="3" />
             <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
@@ -58,17 +58,17 @@ const useCases = [
           Desarrollo Batch Oracle SQL, Pro*C y Shell Scripting de Alta Velocidad
         </h1>
 
-        <p class="text-lg text-slate-300 leading-relaxed">
+        <p class="text-lg text-purple-100 leading-relaxed">
           Reducimos el tiempo de ejecución de sus ventanas batch nocturnas de horas a minutos mediante ingeniería avanzada de base de datos y binarios nativos Pro*C.
         </p>
 
         <div class="pt-4 flex flex-wrap gap-4">
           <a
             href="#diagnostico-batch"
-            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-corporate-purple to-corporate-purple-dark hover:from-purple-700 hover:to-purple-800 shadow-purple-glow transition-all"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-corporate-wine bg-white hover:bg-purple-50 shadow-md transition-all"
           >
             <span>Solicitar Diagnóstico Batch</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
@@ -83,7 +83,7 @@ const useCases = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <h2 class="text-3xl font-extrabold text-corporate-midnight font-display">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-corporate-midnight font-display">
           Capacidades Técnicas en Entornos Oracle & Linux
         </h2>
         <p class="text-slate-600 text-base">
@@ -93,9 +93,9 @@ const useCases = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {batchFeatures.map((f) => (
-          <div class="bg-corporate-light p-8 rounded-3xl border border-slate-200/90 hover:border-purple-300 transition-all flex flex-col justify-between shadow-purple-card hover:shadow-purple-glow">
+          <div class="bg-corporate-light p-8 rounded-3xl border border-slate-200/90 hover:border-corporate-wine transition-all flex flex-col justify-between shadow-google-card hover:shadow-google-hover">
             <div>
-              <div class="inline-block text-[10px] font-bold uppercase tracking-wider text-corporate-purple bg-purple-50 px-2.5 py-1 rounded border border-purple-200 mb-4">
+              <div class="inline-block text-[10px] font-bold uppercase tracking-wider text-corporate-wine bg-corporate-wine-soft px-3 py-1 rounded-full border border-corporate-wine-border mb-4">
                 {f.metric}
               </div>
               <h3 class="text-xl font-bold text-corporate-midnight font-display mb-3">{f.title}</h3>
@@ -109,7 +109,7 @@ const useCases = [
   </section>
 
   <!-- Use Cases Section -->
-  <section class="py-16 bg-corporate-midnight text-white border-y border-slate-800">
+  <section class="py-16 bg-corporate-wine text-white border-y border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center mb-12">
         <h2 class="text-2xl sm:text-3xl font-extrabold font-display">Casos de Uso Típicos de Procesamiento Masivo</h2>
@@ -117,12 +117,12 @@ const useCases = [
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {useCases.map((uc) => (
-          <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 flex items-start gap-3">
-            <svg class="w-5 h-5 text-purple-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <div class="bg-white/10 p-5 rounded-2xl border border-white/20 flex items-start gap-3">
+            <svg class="w-5 h-5 text-pink-200 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
               <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
               <path d="m9 12 2 2 4-4" />
             </svg>
-            <span class="text-sm text-slate-200 font-medium">{uc}</span>
+            <span class="text-sm text-purple-100 font-medium">{uc}</span>
           </div>
         ))}
       </div>

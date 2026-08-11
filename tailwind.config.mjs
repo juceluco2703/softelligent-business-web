@@ -5,14 +5,14 @@ export default {
     extend: {
       colors: {
         corporate: {
-          purple: '#7C3AED',          // Morado Vibrante Principal
-          'purple-light': '#8B5CF6',    // Morado Claro
-          'purple-dark': '#6D28D9',     // Morado Oscuro
-          'purple-soft': '#F5F3FF',     // Fondo Morado Suave
-          'purple-border': '#DDD6FE',   // Borde Sutil Morado
-          midnight: '#0F172A',          // Fondo Navbar & Footer / Encabezados Noche
-          navy: '#1E1B4B',              // Azul Noche Corporativo
-          bg: '#FFFFFF',                // Blanco Puro
+          wine: '#3B0024',            // Guinda Corporativo Oficial
+          'wine-light': '#4A022B',      // Guinda Claro / Hover
+          'wine-dark': '#280018',       // Guinda Profundo
+          'wine-accent': '#6B0542',     // Guinda Acento
+          'wine-soft': '#FDF4F8',       // Fondo Guinda Suave
+          'wine-border': '#F8E1EE',     // Borde Guinda Sutil
+          midnight: '#0F172A',          // Negro Noche / Títulos
+          bg: '#FFFFFF',                // Blanco Puro estilo Google Store
           light: '#F8FAFC',             // Gris Ultra Claro
           slate: '#F1F5F9',             // Gris Estructura
           text: '#1E293B',              // Texto Cuerpo
@@ -24,8 +24,9 @@ export default {
         display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'purple-glow': '0 10px 30px -5px rgba(124, 58, 237, 0.25)',
-        'purple-card': '0 4px 20px -2px rgba(124, 58, 237, 0.08)',
+        'google-card': '0 1px 3px 0 rgba(60,64,67,0.1), 0 4px 8px 3px rgba(60,64,67,0.05)',
+        'google-hover': '0 4px 12px 0 rgba(60,64,67,0.15), 0 8px 24px 4px rgba(60,64,67,0.08)',
+        'wine-glow': '0 8px 24px -4px rgba(59, 0, 36, 0.3)',
       }
     },
   },
