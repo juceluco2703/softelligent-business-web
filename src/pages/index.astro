@@ -4,32 +4,31 @@ import HeroSection from '../components/HeroSection.astro';
 import RoleValue from '../components/RoleValue.astro';
 import TechStack from '../components/TechStack.astro';
 import ContactForm from '../components/ContactForm.astro';
-import { Layers, Database, Cpu, Network, ArrowRight, ShieldCheck, Award, Zap, Building2, CheckCircle2 } from 'lucide-astro';
 
 const servicesSummary = [
   {
-    icon: Layers,
+    type: "layers",
     title: "Fábrica de Software a la Medida",
     description: "Células ágiles dedicadas de ingenieros senior para construir soluciones empresariales escalables con 100% de propiedad de código.",
     href: "/fabrica-de-software",
     highlights: ["Metodología Agile/Scrum", "Arquitecturas en Microservicios", "Cero Deuda Técnica"]
   },
   {
-    icon: Database,
+    type: "database",
     title: "Desarrollo Batch Oracle SQL & Pro*C",
     description: "Especialización en procesamiento masivo de datos, reducción de ventanas batch nocturnas y tuning de base de datos mission-critical.",
     href: "/desarrollo-batch-oracle",
     highlights: ["Pro*C / C++ Native Integration", "Pl/SQL Advanced Tuning", "Shell Scripts de Alta Velocidad"]
   },
   {
-    icon: Cpu,
+    type: "cpu",
     title: "Consultoría de TI & Arquitectura",
     description: "Evaluación independiente de sistemas, estrategia de migración cloud, refactorización legacy y auditoría de ciberseguridad.",
     href: "/consultoria-ti",
     highlights: ["Modernización Legacy", "Cloud Native Strategy", "Auditoría de Rendimiento"]
   },
   {
-    icon: Network,
+    type: "network",
     title: "Redes & Telecomunicaciones",
     description: "Diseño e implementación de infraestructura física y lógica corporativa, SD-WAN, enlaces de alta velocidad y SOC/NOC.",
     href: "/redes-y-telecomunicaciones",
@@ -70,42 +69,73 @@ const stats = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {servicesSummary.map((s) => {
-          const ServiceIcon = s.icon;
-          return (
-            <div class="bg-corporate-light border border-slate-200 hover:border-corporate-cyan/60 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
-              <div>
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-corporate-dark to-corporate-navy text-corporate-cyan flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-                  <ServiceIcon class="w-7 h-7" />
-                </div>
-                <h3 class="text-2xl font-bold text-corporate-dark font-display mb-3 group-hover:text-corporate-blue transition-colors">
-                  {s.title}
-                </h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                  {s.description}
-                </p>
-                <ul class="space-y-2 mb-8">
-                  {s.highlights.map((h) => (
-                    <li class="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                      <CheckCircle2 class="w-4 h-4 text-corporate-cyan" />
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
+        {servicesSummary.map((s) => (
+          <div class="bg-corporate-light border border-slate-200 hover:border-corporate-cyan/60 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-corporate-dark to-corporate-navy text-corporate-cyan flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                {s.type === 'layers' && (
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                  </svg>
+                )}
+                {s.type === 'database' && (
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                  </svg>
+                )}
+                {s.type === 'cpu' && (
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <rect width="16" height="16" x="4" y="4" rx="2" />
+                    <rect width="6" height="6" x="9" y="9" rx="1" />
+                    <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" />
+                  </svg>
+                )}
+                {s.type === 'network' && (
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <rect width="6" height="6" x="16" y="16" rx="1" />
+                    <rect width="6" height="6" x="2" y="16" rx="1" />
+                    <rect width="6" height="6" x="9" y="2" rx="1" />
+                    <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
+                    <path d="M12 12V8" />
+                  </svg>
+                )}
               </div>
-
-              <div class="pt-4 border-t border-slate-200/80 flex items-center justify-between">
-                <a
-                  href={s.href}
-                  class="inline-flex items-center gap-2 text-sm font-bold text-corporate-cyan hover:text-corporate-blue transition-colors"
-                >
-                  <span>Ver Detalle de la Solución</span>
-                  <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
+              <h3 class="text-2xl font-bold text-corporate-dark font-display mb-3 group-hover:text-corporate-blue transition-colors">
+                {s.title}
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                {s.description}
+              </p>
+              <ul class="space-y-2 mb-8">
+                {s.highlights.map((h) => (
+                  <li class="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                    <svg class="w-4 h-4 text-corporate-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          );
-        })}
+
+            <div class="pt-4 border-t border-slate-200/80 flex items-center justify-between">
+              <a
+                href={s.href}
+                class="inline-flex items-center gap-2 text-sm font-bold text-corporate-cyan hover:text-corporate-blue transition-colors"
+              >
+                <span>Ver Detalle de la Solución</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
 
     </div>

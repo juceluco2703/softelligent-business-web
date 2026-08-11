@@ -1,10 +1,8 @@
 ---
-import { Database, Terminal, Cpu, Server, Code2, Cloud, Shield, CpuIcon } from 'lucide-astro';
-
 const stackCategories = [
   {
     category: "Procesamiento Batch & Data Enterprise",
-    icon: Database,
+    type: "database",
     description: "Dominio especializado en optimización de consultas de alto impacto y procesamiento masivo.",
     technologies: [
       { name: "Oracle SQL & PL/SQL", desc: "Tuning avanzado, índices, partitioning y packages enterprise", badge: "Core Enterprise" },
@@ -14,7 +12,7 @@ const stackCategories = [
   },
   {
     category: "Desarrollo de Software & Microservicios",
-    icon: Code2,
+    type: "code",
     description: "Arquitecturas escalables para aplicaciones transaccionales y portales corporativos.",
     technologies: [
       { name: "Java Enterprise", desc: "Spring Boot, Jakarta EE y microservicios resilientes", badge: "Backend Standard" },
@@ -24,7 +22,7 @@ const stackCategories = [
   },
   {
     category: "Infraestructura, Linux & Cloud",
-    icon: Server,
+    type: "server",
     description: "Servidores corporativos, contenedores y entornos seguros para alta disponibilidad.",
     technologies: [
       { name: "Linux Enterprise", desc: "Red Hat Enterprise Linux (RHEL), SUSE, Rocky Linux", badge: "OS Standard" },
@@ -56,40 +54,57 @@ const stackCategories = [
 
     <!-- Tech Grid -->
     <div class="space-y-12">
-      {stackCategories.map((group) => {
-        const GroupIcon = group.icon;
-        return (
-          <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-sm">
-            <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4">
-              <div class="p-2.5 rounded-xl bg-corporate-cyan/10 text-corporate-cyan border border-corporate-cyan/20">
-                <GroupIcon class="w-6 h-6" />
-              </div>
-              <div>
-                <h3 class="text-xl font-bold font-display text-white">{group.category}</h3>
-                <p class="text-xs text-slate-400">{group.description}</p>
-              </div>
+      {stackCategories.map((group) => (
+        <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-sm">
+          <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4">
+            <div class="p-2.5 rounded-xl bg-corporate-cyan/10 text-corporate-cyan border border-corporate-cyan/20">
+              {group.type === 'database' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              )}
+              {group.type === 'code' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              )}
+              {group.type === 'server' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+                  <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+                  <line x1="6" x2="6.01" y1="6" y2="6" />
+                  <line x1="6" x2="6.01" y1="18" y2="18" />
+                </svg>
+              )}
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {group.technologies.map((tech) => (
-                <div class="bg-slate-900/90 border border-slate-800 hover:border-corporate-cyan/50 p-5 rounded-2xl transition-all duration-300 group hover:-translate-y-1">
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-base font-bold text-white font-display group-hover:text-corporate-cyan transition-colors">
-                      {tech.name}
-                    </span>
-                    <span class="text-[10px] font-semibold text-corporate-cyan bg-corporate-cyan/10 px-2 py-0.5 rounded border border-corporate-cyan/20">
-                      {tech.badge}
-                    </span>
-                  </div>
-                  <p class="text-xs text-slate-400 leading-relaxed">
-                    {tech.desc}
-                  </p>
-                </div>
-              ))}
+            <div>
+              <h3 class="text-xl font-bold font-display text-white">{group.category}</h3>
+              <p class="text-xs text-slate-400">{group.description}</p>
             </div>
           </div>
-        );
-      })}
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {group.technologies.map((tech) => (
+              <div class="bg-slate-900/90 border border-slate-800 hover:border-corporate-cyan/50 p-5 rounded-2xl transition-all duration-300 group hover:-translate-y-1">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-base font-bold text-white font-display group-hover:text-corporate-cyan transition-colors">
+                    {tech.name}
+                  </span>
+                  <span class="text-[10px] font-semibold text-corporate-cyan bg-corporate-cyan/10 px-2 py-0.5 rounded border border-corporate-cyan/20">
+                    {tech.badge}
+                  </span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  {tech.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
 
   </div>

@@ -1,6 +1,4 @@
 ---
-import { Cpu, Menu, X, ChevronRight, PhoneCall } from 'lucide-astro';
-
 const navItems = [
   { name: 'Inicio', href: '/' },
   { name: 'Fábrica de Software', href: '/fabrica-de-software' },
@@ -19,7 +17,12 @@ const currentPath = Astro.url.pathname;
       <!-- Brand Logo -->
       <a href="/" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-corporate-cyan to-corporate-blue flex items-center justify-center shadow-glow group-hover:scale-105 transition-transform">
-          <Cpu class="w-6 h-6 text-white" />
+          <!-- CPU Icon -->
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <rect width="16" height="16" x="4" y="4" rx="2" />
+            <rect width="6" height="6" x="9" y="9" rx="1" />
+            <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" />
+          </svg>
         </div>
         <div class="flex flex-col">
           <span class="text-xl font-bold tracking-tight text-white font-display group-hover:text-corporate-cyan transition-colors">
@@ -56,9 +59,15 @@ const currentPath = Astro.url.pathname;
           href="/contacto"
           class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue hover:from-sky-500 hover:to-blue-500 shadow-glow transition-all duration-300 hover:-translate-y-0.5"
         >
-          <PhoneCall class="w-4 h-4" />
+          <!-- Phone Icon -->
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
           <span>Agendar Diagnóstico</span>
-          <ChevronRight class="w-4 h-4" />
+          <!-- Chevron Right -->
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
         </a>
       </div>
 
@@ -70,8 +79,14 @@ const currentPath = Astro.url.pathname;
           class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none"
           aria-label="Abrir menú"
         >
-          <Menu id="menu-icon-open" class="w-7 h-7 block" />
-          <X id="menu-icon-close" class="w-7 h-7 hidden" />
+          <svg id="menu-icon-open" class="w-7 h-7 block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
         </button>
       </div>
 
@@ -100,7 +115,9 @@ const currentPath = Astro.url.pathname;
         href="/contacto"
         class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-base text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue shadow-glow"
       >
-        <PhoneCall class="w-5 h-5" />
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
         <span>Agendar Diagnóstico C-Level</span>
       </a>
     </div>

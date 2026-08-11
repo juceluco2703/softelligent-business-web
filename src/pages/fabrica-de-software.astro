@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
-import { Layers, Users, Code, ShieldCheck, CheckCircle2, Zap, Clock, Trophy, ArrowRight } from 'lucide-astro';
 
 const modalities = [
   {
@@ -23,22 +22,22 @@ const modalities = [
 
 const pillars = [
   {
-    icon: Code,
+    type: "code",
     title: "Código Limpio y Mantenible",
     desc: "Prácticas estrictas de Clean Architecture, TDD y revisiones de código cruzadas para erradicar la deuda técnica."
   },
   {
-    icon: Users,
+    type: "users",
     title: "Talento Senior Verificado",
     desc: "Ingenieros con más de 8 años de experiencia en proyectos bancarios, logísticos y transaccionales masivos."
   },
   {
-    icon: ShieldCheck,
+    type: "shield",
     title: "Propiedad Intelectual Total",
     desc: "El 100% del código fuente, documentación y artefactos pertenecen a su empresa desde la primera línea producida."
   },
   {
-    icon: Clock,
+    type: "clock",
     title: "Integración Inmediata (Time-to-Value)",
     desc: "Despliegue operativo en menos de 10 días hábiles con metodologías estándar (Jira, Git, CI/CD)."
   }
@@ -58,7 +57,11 @@ const pillars = [
       <div class="max-w-3xl space-y-6">
         
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800 border border-corporate-cyan/40 text-corporate-cyan text-xs font-semibold uppercase tracking-wider">
-          <Layers class="w-4 h-4" />
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+            <polyline points="2 17 12 22 22 17" />
+            <polyline points="2 12 12 17 22 12" />
+          </svg>
           <span>Fábrica de Software B2B</span>
         </div>
 
@@ -76,7 +79,9 @@ const pillars = [
             class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue hover:from-sky-500 hover:to-blue-600 shadow-glow transition-all"
           >
             <span>Cotizar Célula de Software</span>
-            <ArrowRight class="w-4 h-4" />
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </a>
         </div>
 
@@ -98,18 +103,40 @@ const pillars = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {pillars.map((p) => {
-          const Icon = p.icon;
-          return (
-            <div class="bg-corporate-light p-6 rounded-2xl border border-slate-200 hover:border-corporate-cyan transition-all">
-              <div class="w-12 h-12 rounded-xl bg-corporate-dark text-corporate-cyan flex items-center justify-center mb-4">
-                <Icon class="w-6 h-6" />
-              </div>
-              <h3 class="text-lg font-bold text-corporate-dark font-display mb-2">{p.title}</h3>
-              <p class="text-xs text-slate-600 leading-relaxed">{p.desc}</p>
+        {pillars.map((p) => (
+          <div class="bg-corporate-light p-6 rounded-2xl border border-slate-200 hover:border-corporate-cyan transition-all">
+            <div class="w-12 h-12 rounded-xl bg-corporate-dark text-corporate-cyan flex items-center justify-center mb-4">
+              {p.type === 'code' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              )}
+              {p.type === 'users' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              )}
+              {p.type === 'shield' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              )}
+              {p.type === 'clock' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              )}
             </div>
-          );
-        })}
+            <h3 class="text-lg font-bold text-corporate-dark font-display mb-2">{p.title}</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
       </div>
 
     </div>
@@ -140,7 +167,9 @@ const pillars = [
             </div>
             <a href="#diagnostico-fabrica" class="text-xs font-bold text-corporate-cyan hover:text-corporate-blue inline-flex items-center gap-1">
               <span>Solicitar Propuesta</span>
-              <ArrowRight class="w-3.5 h-3.5" />
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
         ))}
