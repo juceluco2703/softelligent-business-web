@@ -33,21 +33,21 @@ const stackCategories = [
 ];
 ---
 
-<section id="stack-tecnologico" class="py-20 bg-corporate-dark text-white relative overflow-hidden">
-  <!-- Decorative Glow -->
-  <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-corporate-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+<section id="stack-tecnologico" class="py-20 bg-white relative overflow-hidden">
+  <!-- Subtle Purple Aura -->
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-      <span class="text-xs font-bold uppercase tracking-widest text-corporate-cyan bg-slate-800 px-3.5 py-1 rounded-full border border-slate-700">
+      <span class="text-xs font-bold uppercase tracking-widest text-corporate-purple bg-purple-100 px-3.5 py-1 rounded-full border border-purple-200">
         Ecosistema Tecnológico
       </span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-corporate-purple-dark font-display">
         Tecnología Robusta y Probada en Entornos Exigentes
       </h2>
-      <p class="text-slate-300 text-base sm:text-lg">
+      <p class="text-slate-600 text-base sm:text-lg">
         Combinamos tecnologías tradicionales de alto rendimiento con arquitecturas modernas para garantizar estabilidad, escalabilidad y velocidad.
       </p>
     </div>
@@ -55,9 +55,9 @@ const stackCategories = [
     <!-- Tech Grid -->
     <div class="space-y-12">
       {stackCategories.map((group) => (
-        <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-sm">
-          <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4">
-            <div class="p-2.5 rounded-xl bg-corporate-cyan/10 text-corporate-cyan border border-corporate-cyan/20">
+        <div class="bg-corporate-light border border-purple-100 rounded-3xl p-6 sm:p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-6 border-b border-purple-100 pb-4">
+            <div class="p-2.5 rounded-xl bg-purple-100 text-corporate-purple border border-purple-200/80">
               {group.type === 'database' && (
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                   <ellipse cx="12" cy="5" rx="9" ry="3" />
@@ -81,23 +81,23 @@ const stackCategories = [
               )}
             </div>
             <div>
-              <h3 class="text-xl font-bold font-display text-white">{group.category}</h3>
-              <p class="text-xs text-slate-400">{group.description}</p>
+              <h3 class="text-xl font-bold font-display text-corporate-purple-dark">{group.category}</h3>
+              <p class="text-xs text-slate-500">{group.description}</p>
             </div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {group.technologies.map((tech) => (
-              <div class="bg-slate-900/90 border border-slate-800 hover:border-corporate-cyan/50 p-5 rounded-2xl transition-all duration-300 group hover:-translate-y-1">
+              <div class="bg-white border border-purple-100 hover:border-purple-300 p-5 rounded-2xl transition-all duration-300 group hover:-translate-y-1 shadow-xs hover:shadow-purple-glow">
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-base font-bold text-white font-display group-hover:text-corporate-cyan transition-colors">
+                  <span class="text-base font-bold text-corporate-purple-dark font-display group-hover:text-corporate-purple transition-colors">
                     {tech.name}
                   </span>
-                  <span class="text-[10px] font-semibold text-corporate-cyan bg-corporate-cyan/10 px-2 py-0.5 rounded border border-corporate-cyan/20">
+                  <span class="text-[10px] font-bold text-corporate-purple bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
                     {tech.badge}
                   </span>
                 </div>
-                <p class="text-xs text-slate-400 leading-relaxed">
+                <p class="text-xs text-slate-600 leading-relaxed">
                   {tech.desc}
                 </p>
               </div>

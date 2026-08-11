@@ -99,7 +99,7 @@ const serviceSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </head>
-  <body class="bg-corporate-light text-corporate-text font-sans antialiased min-h-screen flex flex-col selection:bg-corporate-cyan selection:text-white">
+  <body class="bg-white text-corporate-text font-sans antialiased min-h-screen flex flex-col selection:bg-corporate-purple selection:text-white">
     <Navbar />
     <main class="flex-grow">
       <slot />
@@ -109,7 +109,6 @@ const serviceSchema = {
 </html>
 
 <style is:global>
-  /* Optimization & Custom Utility Styles */
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
@@ -117,18 +116,17 @@ const serviceSchema = {
     font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   }
   
-  /* Custom scrollbar for modern browsers */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #0F172A;
+    background: #FAFAF9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1E3A8A;
+    background: #6B21A8;
     border-radius: 5px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #0284C7;
+    background: #7E22CE;
   }
 </style>

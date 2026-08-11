@@ -50,14 +50,14 @@ const pillars = [
 >
   
   <!-- Subpage Hero -->
-  <section class="bg-corporate-dark text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-corporate-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+  <section class="bg-gradient-to-b from-purple-950 via-purple-900 to-purple-950 text-white pt-16 pb-20 border-b border-purple-800 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl space-y-6">
         
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800 border border-corporate-cyan/40 text-corporate-cyan text-xs font-semibold uppercase tracking-wider">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-900/80 border border-purple-700 text-purple-200 text-xs font-bold uppercase tracking-wider">
+          <svg class="w-4 h-4 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <polygon points="12 2 2 7 12 12 22 7 12 2" />
             <polyline points="2 17 12 22 22 17" />
             <polyline points="2 12 12 17 22 12" />
@@ -69,14 +69,14 @@ const pillars = [
           Fábrica de Software a la Medida y Células Dedicadas de Alto Rendimiento
         </h1>
 
-        <p class="text-lg text-slate-300 leading-relaxed">
+        <p class="text-lg text-purple-100 leading-relaxed">
           Construimos aplicaciones escalables, plataformas transaccionales y microservicios con equipos dedicados que se adaptan a la gobernanza tecnológica de su empresa.
         </p>
 
         <div class="pt-4 flex flex-wrap gap-4">
           <a
             href="#diagnostico-fabrica"
-            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue hover:from-sky-500 hover:to-blue-600 shadow-glow transition-all"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-corporate-purple to-corporate-purple-light hover:from-purple-800 hover:to-purple-700 shadow-purple-glow transition-all"
           >
             <span>Cotizar Célula de Software</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -94,7 +94,7 @@ const pillars = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <h2 class="text-3xl font-extrabold text-corporate-dark font-display">
+        <h2 class="text-3xl font-extrabold text-corporate-purple-dark font-display">
           Pilares de Nuestra Fábrica de Software
         </h2>
         <p class="text-slate-600 text-base">
@@ -104,8 +104,8 @@ const pillars = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {pillars.map((p) => (
-          <div class="bg-corporate-light p-6 rounded-2xl border border-slate-200 hover:border-corporate-cyan transition-all">
-            <div class="w-12 h-12 rounded-xl bg-corporate-dark text-corporate-cyan flex items-center justify-center mb-4">
+          <div class="bg-corporate-light p-6 rounded-2xl border border-purple-100 hover:border-purple-300 transition-all shadow-xs">
+            <div class="w-12 h-12 rounded-xl bg-corporate-purple text-white flex items-center justify-center mb-4 shadow-purple-glow">
               {p.type === 'code' && (
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                   <polyline points="16 18 22 12 16 6" />
@@ -133,7 +133,7 @@ const pillars = [
                 </svg>
               )}
             </div>
-            <h3 class="text-lg font-bold text-corporate-dark font-display mb-2">{p.title}</h3>
+            <h3 class="text-lg font-bold text-corporate-purple-dark font-display mb-2">{p.title}</h3>
             <p class="text-xs text-slate-600 leading-relaxed">{p.desc}</p>
           </div>
         ))}
@@ -143,11 +143,11 @@ const pillars = [
   </section>
 
   <!-- Modalities Section -->
-  <section class="py-20 bg-corporate-slate border-y border-slate-200">
+  <section class="py-20 bg-corporate-light border-y border-purple-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <h2 class="text-3xl font-extrabold text-corporate-dark font-display">
+        <h2 class="text-3xl font-extrabold text-corporate-purple-dark font-display">
           Modalidades de Contratación B2B
         </h2>
         <p class="text-slate-600 text-base">
@@ -157,15 +157,15 @@ const pillars = [
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {modalities.map((m) => (
-          <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+          <div class="bg-white p-8 rounded-3xl border border-purple-100 shadow-purple-card hover:shadow-purple-glow transition-all flex flex-col justify-between">
             <div>
-              <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-corporate-cyan bg-sky-50 px-2.5 py-1 rounded border border-sky-100 mb-4">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-corporate-purple bg-purple-50 px-2.5 py-1 rounded border border-purple-200 mb-4">
                 {m.tag}
               </span>
-              <h3 class="text-xl font-bold text-corporate-dark font-display mb-3">{m.title}</h3>
+              <h3 class="text-xl font-bold text-corporate-purple-dark font-display mb-3">{m.title}</h3>
               <p class="text-sm text-slate-600 leading-relaxed mb-6">{m.desc}</p>
             </div>
-            <a href="#diagnostico-fabrica" class="text-xs font-bold text-corporate-cyan hover:text-corporate-blue inline-flex items-center gap-1">
+            <a href="#diagnostico-fabrica" class="text-xs font-bold text-corporate-purple hover:text-purple-900 inline-flex items-center gap-1">
               <span>Solicitar Propuesta</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
