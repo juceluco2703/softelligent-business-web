@@ -1,0 +1,96 @@
+---
+import { Database, Terminal, Cpu, Server, Code2, Cloud, Shield, CpuIcon } from 'lucide-astro';
+
+const stackCategories = [
+  {
+    category: "Procesamiento Batch & Data Enterprise",
+    icon: Database,
+    description: "Dominio especializado en optimización de consultas de alto impacto y procesamiento masivo.",
+    technologies: [
+      { name: "Oracle SQL & PL/SQL", desc: "Tuning avanzado, índices, partitioning y packages enterprise", badge: "Core Enterprise" },
+      { name: "Pro*C / C++", desc: "Integración nativa C para procesos batch de ultra alta velocidad", badge: "Alta Especialidad" },
+      { name: "Shell Scripting", desc: "Automatización robusta en Bash, KSH y scripting de servidor", badge: "Mission Critical" },
+    ]
+  },
+  {
+    category: "Desarrollo de Software & Microservicios",
+    icon: Code2,
+    description: "Arquitecturas escalables para aplicaciones transaccionales y portales corporativos.",
+    technologies: [
+      { name: "Java Enterprise", desc: "Spring Boot, Jakarta EE y microservicios resilientes", badge: "Backend Standard" },
+      { name: "Python Engineering", desc: "FastAPI, procesamiento paralelo y APIs de alta densidad", badge: "Modern Backend" },
+      { name: "C / C++ Systems", desc: "Desarrollo a nivel sistema de baja latencia y alta concurrencia", badge: "High Performance" },
+    ]
+  },
+  {
+    category: "Infraestructura, Linux & Cloud",
+    icon: Server,
+    description: "Servidores corporativos, contenedores y entornos seguros para alta disponibilidad.",
+    technologies: [
+      { name: "Linux Enterprise", desc: "Red Hat Enterprise Linux (RHEL), SUSE, Rocky Linux", badge: "OS Standard" },
+      { name: "Cloud & DevOps", desc: "Docker, Kubernetes, AWS, Azure, Pipelines CI/CD", badge: "Infrastructure" },
+      { name: "Ciberseguridad TI", desc: "Hardening de servidores, cifrado de datos y auditoría ISO 27001", badge: "Security" },
+    ]
+  }
+];
+---
+
+<section id="stack-tecnologico" class="py-20 bg-corporate-dark text-white relative overflow-hidden">
+  <!-- Decorative Glow -->
+  <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-corporate-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="text-xs font-bold uppercase tracking-widest text-corporate-cyan bg-slate-800 px-3.5 py-1 rounded-full border border-slate-700">
+        Ecosistema Tecnológico
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+        Tecnología Robusta y Probada en Entornos Exigentes
+      </h2>
+      <p class="text-slate-300 text-base sm:text-lg">
+        Combinamos tecnologías tradicionales de alto rendimiento con arquitecturas modernas para garantizar estabilidad, escalabilidad y velocidad.
+      </p>
+    </div>
+
+    <!-- Tech Grid -->
+    <div class="space-y-12">
+      {stackCategories.map((group) => {
+        const GroupIcon = group.icon;
+        return (
+          <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-sm">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4">
+              <div class="p-2.5 rounded-xl bg-corporate-cyan/10 text-corporate-cyan border border-corporate-cyan/20">
+                <GroupIcon class="w-6 h-6" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold font-display text-white">{group.category}</h3>
+                <p class="text-xs text-slate-400">{group.description}</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {group.technologies.map((tech) => (
+                <div class="bg-slate-900/90 border border-slate-800 hover:border-corporate-cyan/50 p-5 rounded-2xl transition-all duration-300 group hover:-translate-y-1">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-base font-bold text-white font-display group-hover:text-corporate-cyan transition-colors">
+                      {tech.name}
+                    </span>
+                    <span class="text-[10px] font-semibold text-corporate-cyan bg-corporate-cyan/10 px-2 py-0.5 rounded border border-corporate-cyan/20">
+                      {tech.badge}
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-400 leading-relaxed">
+                    {tech.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>

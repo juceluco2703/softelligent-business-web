@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { PhoneCall, Mail, MapPin, Clock, ShieldCheck, CheckCircle2, Building, MessageSquare } from 'lucide-astro';
+
+const steps = [
+  {
+    step: "01",
+    title: "Contacto & Firma de NDA",
+    desc: "Recibimos su requerimiento y firmamos acuerdo de confidencialidad previo a cualquier intercambio de información sensible."
+  },
+  {
+    step: "02",
+    title: "Sesión Técnica de 30 Minutos",
+    desc: "Reunión privada con nuestros Arquitectos Senior para revisar arquitectura actual, objetivos y restricciones del proyecto."
+  },
+  {
+    step: "03",
+    title: "Entrega de Dictamen & Propuesta",
+    desc: "Presentamos un plan de trabajo detallado con alcance, tiempos, matriz de riesgos y estimación de inversión económica."
+  }
+];
+---
+
+<Layout
+  title="Agendar Diagnóstico C-Level | Softelligent Business"
+  description="Agende una sesión de diagnóstico estratégico con la dirección de arquitectura TI de Softelligent Business. Soluciones B2B a la medida con garantía NDA."
+>
+  
+  <!-- Header Hero -->
+  <section class="bg-corporate-dark text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto text-center space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-corporate-cyan bg-slate-800 px-3.5 py-1 rounded-full border border-slate-700">
+          Atención Directa C-Level
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold font-display">
+          Agende un Diagnóstico Estratégico de TI
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300">
+          Coordine una sesión privada con nuestros Directores de Arquitectura para abordar sus desafíos de desarrollo, procesos batch o infraestructura.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {steps.map((st) => (
+          <div class="flex items-start gap-4">
+            <span class="text-3xl font-extrabold font-display text-corporate-cyan bg-sky-50 px-3 py-1 rounded-xl border border-sky-200">
+              {st.step}
+            </span>
+            <div>
+              <h3 class="text-base font-bold text-corporate-dark font-display mb-1">{st.title}</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">{st.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Form & Contact Details Section -->
+  <section class="py-20 bg-corporate-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Direct Info -->
+        <div class="lg:col-span-5 space-y-8">
+          
+          <div class="bg-corporate-dark text-white rounded-3xl p-8 shadow-xl space-y-6">
+            <h2 class="text-2xl font-bold font-display text-white border-b border-slate-800 pb-4">
+              Canales Directos de Comunicación
+            </h2>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="p-3 rounded-xl bg-corporate-cyan/10 text-corporate-cyan border border-corporate-cyan/20">
+                  <PhoneCall class="w-6 h-6" />
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block uppercase font-semibold">Atención Telefónica Directa</span>
+                  <a href="tel:+525512345678" class="text-lg font-bold text-white hover:text-corporate-cyan transition-colors">+52 (55) 1234-5678</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="p-3 rounded-xl bg-corporate-cyan/10 text-corporate-cyan border border-corporate-cyan/20">
+                  <Mail class="w-6 h-6" />
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block uppercase font-semibold">Correo Corporativo C-Level</span>
+                  <a href="mailto:contacto@softelligent-business.com.mx" class="text-sm font-bold text-white hover:text-corporate-cyan transition-colors">contacto@softelligent-business.com.mx</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="p-3 rounded-xl bg-corporate-cyan/10 text-corporate-cyan border border-corporate-cyan/20">
+                  <MapPin class="w-6 h-6" />
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block uppercase font-semibold">Oficinas Centrales</span>
+                  <span class="text-sm text-slate-300">Ciudad de México, México (Servicios Nacionales e Internacionales)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 space-y-3">
+              <div class="flex items-center gap-2 text-xs text-emerald-400">
+                <ShieldCheck class="w-4 h-4" />
+                <span>Respuesta en menos de 24 horas hábiles</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <Clock class="w-4 h-4" />
+                <span>Horario de Atención: Lunes a Viernes 8:00 - 19:00 CST</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+            <h3 class="text-base font-bold text-corporate-dark font-display">Garantía de Confidencialidad NDA</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Toda la información compartida durante el proceso de diagnóstico está protegida legalmente. Firmamos convenios NDA antes de revisar repositorios o arquitecturas.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="lg:col-span-7">
+          <ContactForm
+            title="Formulario de Solicitud de Diagnóstico"
+            subtitle="Complete sus datos corporativos para programar la sesión privada."
+            defaultService="Diagnostico Global"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>

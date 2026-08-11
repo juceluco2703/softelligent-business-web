@@ -1,0 +1,134 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = "Softelligent Business | Fábrica de Software y Consultoría de TI Enterprise",
+  description = "Fábrica de software a la medida, desarrollo batch en Oracle SQL y Pro*C, consultoría de arquitectura de TI y redes corporativas para empresas de alto rendimiento.",
+  ogImage = "https://softelligent-business.com.mx/og-default.jpg",
+  canonicalUrl = Astro.url.href,
+} = Astro.props;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Softelligent Business",
+  "url": "https://softelligent-business.com.mx",
+  "logo": "https://softelligent-business.com.mx/logo.png",
+  "description": "Fábrica de software de alto rendimiento, desarrollo batch Oracle SQL, Pro*C, consultoría de TI y redes corporativas para ejecutivos C-Level.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "MX",
+    "addressRegion": "Ciudad de México"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+52-55-1234-5678",
+    "contactType": "sales",
+    "availableLanguage": ["Spanish", "English"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/softelligent-business",
+    "https://twitter.com/softelligent_mx"
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ITService",
+  "serviceType": [
+    "Fábrica de Software a la Medida",
+    "Desarrollo Batch Oracle SQL y Pro*C",
+    "Consultoría de Arquitectura de TI",
+    "Redes y Telecomunicaciones Corporativas"
+  ],
+  "provider": {
+    "@type": "Organization",
+    "name": "Softelligent Business"
+  },
+  "areaServed": "Global",
+  "description": "Servicios de ingeniería de software enterprise, células dedicadas de desarrollo y optimización de procesos de datos batch de gran escala."
+};
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Softelligent Business" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Google Fonts Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </head>
+  <body class="bg-corporate-light text-corporate-text font-sans antialiased min-h-screen flex flex-col selection:bg-corporate-cyan selection:text-white">
+    <Navbar />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  /* Optimization & Custom Utility Styles */
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Custom scrollbar for modern browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0F172A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E3A8A;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0284C7;
+  }
+</style>

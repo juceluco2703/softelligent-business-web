@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://softelligent-business.com.mx/sitemap-index.xml

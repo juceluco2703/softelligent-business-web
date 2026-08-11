@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { Network, ShieldCheck, Server, Wifi, Lock, ArrowRight, CheckCircle2 } from 'lucide-astro';
+
+const telecomServices = [
+  {
+    title: "Infraestructura & Cableado Estructurado Enterprise",
+    desc: "Diseño e instalación de redes físicas categoría 6A/7 y enlaces de fibra óptica para data centers y corporativos.",
+    icon: Server
+  },
+  {
+    title: "Redes SD-WAN & Interconexión Sucursales",
+    desc: "Implementación de redes definidas por software con túneles VPN redundantes y optimización dinámica de tráfico.",
+    icon: Wifi
+  },
+  {
+    title: "Ciberseguridad Perimetral & Next-Gen Firewalls",
+    desc: "Hardening de routers/firewalls (Fortinet, Cisco, Palo Alto), detección de intrusos (IDS/IPS) y filtrado avanzado.",
+    icon: Lock
+  },
+  {
+    title: "Servicios Administrados NOC / SOC 24/7",
+    desc: "Monitoreo continuo de estado de enlaces, ancho de banda, alertas preventivas y respuesta inmediata ante incidentes.",
+    icon: ShieldCheck
+  }
+];
+---
+
+<Layout
+  title="Redes y Telecomunicaciones Corporativas | Softelligent Business"
+  description="Soluciones de redes corporativas, SD-WAN, infraestructura de telecomunicaciones, ciberseguridad y servicios administrados NOC/SOC 24/7 en México."
+>
+  
+  <!-- Subpage Hero -->
+  <section class="bg-corporate-dark text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
+    <div class="absolute top-10 left-10 w-96 h-96 bg-corporate-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800 border border-corporate-cyan/40 text-corporate-cyan text-xs font-semibold uppercase tracking-wider">
+          <Network class="w-4 h-4" />
+          <span>Infraestructura & Ciberseguridad</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-extrabold font-display leading-tight">
+          Redes, Telecomunicaciones e Infraestructura Corporativa
+        </h1>
+
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Garantizamos la conectividad ininterrumpida, velocidad de transporte de datos y protección perimetral para sus oficinas, plantas y data centers.
+        </p>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a
+            href="#diagnostico-redes"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue hover:from-sky-500 hover:to-blue-600 shadow-glow transition-all"
+          >
+            <span>Cotizar Infraestructura de Red</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Telecom Grid -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl font-extrabold text-corporate-dark font-display">
+          Soluciones Integrales de Conectividad
+        </h2>
+        <p class="text-slate-600 text-base">
+          Infraestructura lógica y física diseñada bajo las normativas internacionales TIA/EIA e ISO.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {telecomServices.map((s) => {
+          const Icon = s.icon;
+          return (
+            <div class="bg-corporate-light p-8 rounded-3xl border border-slate-200 hover:border-corporate-cyan transition-all flex items-start gap-5">
+              <div class="w-12 h-12 rounded-2xl bg-corporate-dark text-corporate-cyan flex items-center justify-center shrink-0 shadow-md">
+                <Icon class="w-6 h-6" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-corporate-dark font-display mb-2">{s.title}</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section id="diagnostico-redes" class="py-20 bg-corporate-slate">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ContactForm
+        title="Agende una Evaluación de Infraestructura de Red"
+        subtitle="Analizaremos el estado actual de su red perimetral, enlaces y esquemas de ciberseguridad."
+        defaultService="Redes Telecom"
+      />
+    </div>
+  </section>
+
+</Layout>

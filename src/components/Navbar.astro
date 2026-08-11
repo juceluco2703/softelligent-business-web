@@ -1,0 +1,123 @@
+---
+import { Cpu, Menu, X, ChevronRight, PhoneCall } from 'lucide-astro';
+
+const navItems = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Fábrica de Software', href: '/fabrica-de-software' },
+  { name: 'Batch Oracle & Pro*C', href: '/desarrollo-batch-oracle' },
+  { name: 'Consultoría TI', href: '/consultoria-ti' },
+  { name: 'Redes & Telecom', href: '/redes-y-telecomunicaciones' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-corporate-dark/95 backdrop-blur-md border-b border-slate-800 text-white transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-corporate-cyan to-corporate-blue flex items-center justify-center shadow-glow group-hover:scale-105 transition-transform">
+          <Cpu class="w-6 h-6 text-white" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-bold tracking-tight text-white font-display group-hover:text-corporate-cyan transition-colors">
+            SOFTELLIGENT
+          </span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-corporate-cyan -mt-1">
+            Business Solutions
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-1">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
+          return (
+            <a
+              href={item.href}
+              class={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                isActive
+                  ? 'text-white bg-slate-800/80 border border-corporate-cyan/30 shadow-sm'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
+              }`}
+            >
+              {item.name}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Executive CTA Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a
+          href="/contacto"
+          class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue hover:from-sky-500 hover:to-blue-500 shadow-glow transition-all duration-300 hover:-translate-y-0.5"
+        >
+          <PhoneCall class="w-4 h-4" />
+          <span>Agendar Diagnóstico</span>
+          <ChevronRight class="w-4 h-4" />
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden flex items-center">
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <Menu id="menu-icon-open" class="w-7 h-7 block" />
+          <X id="menu-icon-close" class="w-7 h-7 hidden" />
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-corporate-dark/98 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+    {navItems.map((item) => {
+      const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
+      return (
+        <a
+          href={item.href}
+          class={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${
+            isActive
+              ? 'text-white bg-slate-800 border-l-4 border-corporate-cyan'
+              : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+          }`}
+        >
+          {item.name}
+        </a>
+      );
+    })}
+    <div class="pt-4 border-t border-slate-800">
+      <a
+        href="/contacto"
+        class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-base text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue shadow-glow"
+      >
+        <PhoneCall class="w-5 h-5" />
+        <span>Agendar Diagnóstico C-Level</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  if (btn && menu && iconOpen && iconClose) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+</script>

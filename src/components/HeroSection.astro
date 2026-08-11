@@ -1,0 +1,108 @@
+---
+import { ArrowRight, ShieldCheck, Database, Zap, CheckCircle2, PhoneCall } from 'lucide-astro';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  badge?: string;
+}
+
+const {
+  badge = "FÁBRICA DE SOFTWARE B2B & CONSULTORÍA ENTERPRISE",
+  title = "Transformamos Complejidad Operativa en Ventaja Competitiva de Alto Rendimiento",
+  subtitle = "Diseñamos e implementamos arquitecturas de software a la medida, sistemas batch mission-critical en Oracle SQL/Pro*C e infraestructura de TI para corporativos de alta exigencia.",
+} = Astro.props;
+
+const metrics = [
+  { value: "99.99%", label: "Uptime Garantizado SLA", detail: "En sistemas críticos de negocio" },
+  { value: "-60%", label: "Reducción en Tiempo Batch", detail: "Optimización Oracle SQL & Pro*C" },
+  { value: "+150", label: "Proyectos Entregados", detail: "Para sector financiero y corporativo" },
+  { value: "100%", label: "Propiedad de Código", detail: "Sin licencias ni ataduras de proveedor" },
+];
+---
+
+<section class="relative bg-corporate-dark text-white pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+  <!-- Glowing background elements -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-corporate-cyan/20 to-corporate-navy/30 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute top-10 right-10 w-72 h-72 bg-blue-600/10 rounded-full blur-2xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-4xl mx-auto space-y-6">
+      
+      <!-- Top Executive Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-corporate-cyan/40 text-corporate-cyan text-xs font-semibold tracking-wider uppercase shadow-glow">
+        <Zap class="w-4 h-4 text-corporate-cyan animate-pulse" />
+        <span>{badge}</span>
+      </div>
+
+      <!-- Main H1 Title -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white leading-[1.15]">
+        {title.split("en").length > 1 ? (
+          <>
+            {title.split("en")[0]} <span class="bg-gradient-to-r from-sky-400 via-corporate-cyan to-blue-400 bg-clip-text text-transparent">en {title.split("en").slice(1).join("en")}</span>
+          </>
+        ) : (
+          title
+        )}
+      </h1>
+
+      <!-- Transactional Subtitle -->
+      <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
+        {subtitle}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/contacto"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue hover:from-sky-500 hover:to-blue-600 shadow-glow-lg transition-all duration-300 hover:-translate-y-1"
+        >
+          <PhoneCall class="w-5 h-5" />
+          <span>Agendar Diagnóstico Estratégico</span>
+          <ArrowRight class="w-5 h-5" />
+        </a>
+        <a
+          href="#soluciones"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-semibold text-base text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-all duration-300"
+        >
+          <span>Explorar Soluciones B2B</span>
+        </a>
+      </div>
+
+      <!-- Trust highlights -->
+      <div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 font-medium">
+        <span class="flex items-center gap-1.5">
+          <CheckCircle2 class="w-4 h-4 text-corporate-cyan" />
+          Células de Desarrollo Ágil Dedicadas
+        </span>
+        <span class="flex items-center gap-1.5">
+          <ShieldCheck class="w-4 h-4 text-corporate-cyan" />
+          Cumplimiento Riguroso de SLAs
+        </span>
+        <span class="flex items-center gap-1.5">
+          <Database class="w-4 h-4 text-corporate-cyan" />
+          Especialización en Ambientes Oracle & Legacy
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Executive Metrics Grid -->
+    <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      {metrics.map((m) => (
+        <div class="bg-slate-900/80 backdrop-blur-md border border-slate-800 p-6 rounded-2xl text-center hover:border-corporate-cyan/40 transition-all duration-300 group">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display bg-gradient-to-r from-sky-400 to-corporate-cyan bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+            {m.value}
+          </div>
+          <div class="text-sm font-semibold text-white mt-1">
+            {m.label}
+          </div>
+          <div class="text-xs text-slate-400 mt-0.5">
+            {m.detail}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

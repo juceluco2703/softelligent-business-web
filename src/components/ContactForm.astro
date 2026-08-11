@@ -1,0 +1,225 @@
+---
+import { Send, ShieldCheck, CheckCircle, Lock, PhoneCall } from 'lucide-astro';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  defaultService?: string;
+}
+
+const {
+  title = "Agende un Diagnóstico Estratégico sin Costo",
+  subtitle = "Complete el formulario para coordinar una sesión técnica de 30 minutos con nuestros arquitectos e ingenieros senior.",
+  defaultService = "Fabrica de Software",
+} = Astro.props;
+---
+
+<div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200 relative overflow-hidden">
+  
+  <!-- Form Header -->
+  <div class="mb-8 space-y-2">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-corporate-cyan text-xs font-semibold">
+      <PhoneCall class="w-3.5 h-3.5" />
+      <span>Sesión Privada para Ejecutivos</span>
+    </div>
+    <h3 class="text-2xl sm:text-3xl font-extrabold text-corporate-dark font-display">
+      {title}
+    </h3>
+    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+      {subtitle}
+    </p>
+  </div>
+
+  <form id="lead-contact-form" class="space-y-6">
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      
+      <!-- Nombre Completo -->
+      <div>
+        <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-corporate-dark mb-2">
+          Nombre Completo *
+        </label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          required
+          placeholder="Ej. Ing. Carlos Mendoza"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-cyan focus:ring-2 focus:ring-corporate-cyan/20 text-slate-800 text-sm outline-none transition-all"
+        />
+      </div>
+
+      <!-- Correo Corporativo -->
+      <div>
+        <label for="email" class="block text-xs font-bold uppercase tracking-wider text-corporate-dark mb-2">
+          Correo Corporativo *
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="carlos.mendoza@empresa.com"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-cyan focus:ring-2 focus:ring-corporate-cyan/20 text-slate-800 text-sm outline-none transition-all"
+        />
+      </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      
+      <!-- Empresa -->
+      <div>
+        <label for="empresa" class="block text-xs font-bold uppercase tracking-wider text-corporate-dark mb-2">
+          Empresa / Organización *
+        </label>
+        <input
+          type="text"
+          id="empresa"
+          name="empresa"
+          required
+          placeholder="Ej. Banco del Norte S.A."
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-cyan focus:ring-2 focus:ring-corporate-cyan/20 text-slate-800 text-sm outline-none transition-all"
+        />
+      </div>
+
+      <!-- Teléfono / WhatsApp -->
+      <div>
+        <label for="telefono" class="block text-xs font-bold uppercase tracking-wider text-corporate-dark mb-2">
+          Teléfono Directo / WhatsApp *
+        </label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          required
+          placeholder="+52 55 9876 5432"
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-cyan focus:ring-2 focus:ring-corporate-cyan/20 text-slate-800 text-sm outline-none transition-all"
+        />
+      </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      
+      <!-- Cargo Directivo -->
+      <div>
+        <label for="cargo" class="block text-xs font-bold uppercase tracking-wider text-corporate-dark mb-2">
+          Cargo Executive / Rol *
+        </label>
+        <select
+          id="cargo"
+          name="cargo"
+          required
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-cyan focus:ring-2 focus:ring-corporate-cyan/20 text-slate-800 text-sm outline-none transition-all bg-white"
+        >
+          <option value="">Seleccione su rol...</option>
+          <option value="CEO">CEO / Director General</option>
+          <option value="CTO">CTO / Director de TI</option>
+          <option value="CFO">CFO / Director Financiero</option>
+          <option value="VP_Operaciones">VP / Director de Operaciones</option>
+          <option value="Arquitecto_TI">Arquitecto de Software / Lider TI</option>
+          <option value="Otro">Otro Cargo Gerencial</option>
+        </select>
+      </div>
+
+      <!-- Servicio de Interés -->
+      <div>
+        <label for="servicio" class="block text-xs font-bold uppercase tracking-wider text-corporate-dark mb-2">
+          Servicio de Interés *
+        </label>
+        <select
+          id="servicio"
+          name="servicio"
+          required
+          class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-cyan focus:ring-2 focus:ring-corporate-cyan/20 text-slate-800 text-sm outline-none transition-all bg-white"
+        >
+          <option value="Fabrica de Software" selected={defaultService === "Fabrica de Software"}>Fábrica de Software a la Medida</option>
+          <option value="Oracle Batch ProC" selected={defaultService === "Oracle Batch ProC"}>Desarrollo Batch Oracle SQL & Pro*C</option>
+          <option value="Consultoria TI" selected={defaultService === "Consultoria TI"}>Consultoría de Arquitectura de TI</option>
+          <option value="Redes Telecom" selected={defaultService === "Redes Telecom"}>Redes, Telecomunicaciones y Ciberseguridad</option>
+          <option value="Diagnostico Global" selected={defaultService === "Diagnostico Global"}>Diagnóstico Integral Enterprise</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- Descripción del Proyecto -->
+    <div>
+      <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-corporate-dark mb-2">
+        Descripción del Proyecto o Desafío Técnico *
+      </label>
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        rows="4"
+        required
+        placeholder="Describa brevemente el objetivo, volumen de datos o requerimiento de su empresa..."
+        class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-corporate-cyan focus:ring-2 focus:ring-corporate-cyan/20 text-slate-800 text-sm outline-none transition-all"
+      ></textarea>
+    </div>
+
+    <!-- Privacy Check -->
+    <div class="flex items-start gap-3">
+      <input
+        type="checkbox"
+        id="privacidad"
+        name="privacidad"
+        required
+        checked
+        class="mt-1 w-4 h-4 text-corporate-cyan border-slate-300 rounded focus:ring-corporate-cyan"
+      />
+      <label for="privacidad" class="text-xs text-slate-600 leading-normal">
+        Acepto las políticas de confidencialidad y el tratamiento de datos para la coordinación del diagnóstico corporativo.
+      </label>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      id="submit-btn"
+      class="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-white bg-gradient-to-r from-corporate-dark to-corporate-navy hover:from-corporate-navy hover:to-corporate-blue shadow-lg hover:shadow-glow transition-all duration-300 group"
+    >
+      <Send class="w-5 h-5 text-corporate-cyan group-hover:translate-x-1 transition-transform" />
+      <span>Confirmar Solicitud de Diagnóstico C-Level</span>
+    </button>
+
+    <!-- Success Message Banner -->
+    <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm flex items-center gap-3">
+      <CheckCircle class="w-6 h-6 text-emerald-600 shrink-0" />
+      <div>
+        <strong class="font-bold">¡Solicitud recibida con éxito!</strong>
+        <p class="text-xs text-emerald-700">Un Director de Arquitectura TI de Softelligent Business se pondrá en contacto en menos de 24 horas.</p>
+      </div>
+    </div>
+
+    <!-- Confidentiality note -->
+    <div class="flex items-center justify-center gap-2 text-xs text-slate-400 font-medium pt-2">
+      <Lock class="w-3.5 h-3.5 text-slate-400" />
+      <span>Información protegida bajo estricto acuerdo de confidencialidad NDA.</span>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('lead-contact-form') as HTMLFormElement;
+  const successBanner = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn');
+
+  if (form && successBanner && submitBtn) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Simulate form sending UX
+      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.innerHTML = 'Enviando Solicitud...';
+
+      setTimeout(() => {
+        form.reset();
+        submitBtn.classList.add('hidden');
+        successBanner.classList.remove('hidden');
+      }, 1000);
+    });
+  }
+</script>

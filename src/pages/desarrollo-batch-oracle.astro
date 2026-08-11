@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { Database, Terminal, Cpu, Zap, ShieldCheck, CheckCircle2, ArrowRight, Gauge, FileCode2 } from 'lucide-astro';
+
+const batchFeatures = [
+  {
+    title: "Pro*C & C/C++ Native Integration",
+    desc: "Construcción de binarios ejecutables de ultra alta velocidad interconectados con las librerías nativas Oracle OCI para procesamiento continuo.",
+    metric: "10x más rápido que scripts convencionales"
+  },
+  {
+    title: "Advanced Oracle PL/SQL & Tuning",
+    desc: "Rediseño de paquetes, procedimientos almacenados, bulk collects, forall e índices particionados para maximizar el throughput de la base de datos.",
+    metric: "-60% en consumo de CPU y memoria IO"
+  },
+  {
+    title: "Enterprise Shell Scripting (Bash/KSH)",
+    desc: "Orquestación segura de trabajos nocturnos con control de concurrencia, logging estructurado, reintentos automáticos y alertas a operadores.",
+    metric: "0 Pérdida de trabajos por fallos de red"
+  },
+  {
+    title: "Auditoría de Ventanas de Procesamiento",
+    desc: "Diagnóstico exhaustivo de planes de ejecución (Explain Plan, AWR, ASH) para eliminar bloqueos y cuellos de botella en bases de datos masivas.",
+    metric: "Optimización garantizada por contrato"
+  }
+];
+
+const useCases = [
+  "Sistemas de Liquidación y Procesamiento Bancario Nocturno.",
+  "Generación Masiva de Facturación Electrónica e Informes Regulatorios.",
+  "Conciliación de Millones de Transacciones de Tarjetas de Crédito / Débito.",
+  "Migración y Extracción Masiva de Datos de Sistemas Legacy a Data Warehouses."
+];
+---
+
+<Layout
+  title="Desarrollo Batch Oracle SQL, Pro*C & Shell Scripting | Softelligent Business"
+  description="Especialistas en optimización de procesos batch Oracle SQL, desarrollo Pro*C nativo C/C++ y Shell Scripts de alto volumen para corporativos y sector financiero."
+>
+  
+  <!-- Subpage Hero -->
+  <section class="bg-corporate-dark text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
+    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-corporate-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800 border border-corporate-cyan/40 text-corporate-cyan text-xs font-semibold uppercase tracking-wider">
+          <Database class="w-4 h-4" />
+          <span>Especialidad Mission-Critical</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-extrabold font-display leading-tight">
+          Desarrollo Batch Oracle SQL, Pro*C y Shell Scripting de Alta Velocidad
+        </h1>
+
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Reducimos el tiempo de ejecución de sus ventanas batch nocturnas de horas a minutos mediante ingeniería avanzada de base de datos y binarios nativos Pro*C.
+        </p>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a
+            href="#diagnostico-batch"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-corporate-cyan to-corporate-blue hover:from-sky-500 hover:to-blue-600 shadow-glow transition-all"
+          >
+            <span>Solicitar Diagnóstico Batch</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl font-extrabold text-corporate-dark font-display">
+          Capacidades Técnicas en Entornos Oracle & Linux
+        </h2>
+        <p class="text-slate-600 text-base">
+          Contamos con expertos de nivel Senior en desarrollo de bajo nivel y afinado de bases de datos altamente transaccionales.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {batchFeatures.map((f) => (
+          <div class="bg-corporate-light p-8 rounded-3xl border border-slate-200 hover:border-corporate-cyan transition-all flex flex-col justify-between">
+            <div>
+              <div class="inline-block text-[10px] font-bold uppercase tracking-wider text-corporate-cyan bg-sky-100 px-2.5 py-1 rounded border border-sky-200 mb-4">
+                {f.metric}
+              </div>
+              <h3 class="text-xl font-bold text-corporate-dark font-display mb-3">{f.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-6">{f.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section class="py-16 bg-corporate-dark text-white border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-display">Casos de Uso Típicos de Procesamiento Masivo</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {useCases.map((uc) => (
+          <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex items-start gap-3">
+            <CheckCircle2 class="w-5 h-5 text-corporate-cyan shrink-0 mt-0.5" />
+            <span class="text-sm text-slate-200 font-medium">{uc}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion Form Section -->
+  <section id="diagnostico-batch" class="py-20 bg-corporate-slate">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ContactForm
+        title="Agende una Evaluación de sus Procesos Batch Oracle"
+        subtitle="Nuestros especialistas en Pro*C y SQL analizarán sus ventanas de ejecución actuales sin ningún compromiso."
+        defaultService="Oracle Batch ProC"
+      />
+    </div>
+  </section>
+
+</Layout>
