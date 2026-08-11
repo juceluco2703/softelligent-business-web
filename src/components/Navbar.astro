@@ -11,7 +11,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class="sticky top-0 z-50 bg-corporate-wine text-white shadow-md transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
     <div class="flex items-center justify-between h-20">
       
       <!-- Brand Logo Original (Concentric Spiral + Softelligent BUSINESS) -->
@@ -94,7 +94,7 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <!-- Mobile Navigation Drawer -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-corporate-wine border-t border-white/10 px-4 pt-2 pb-6 space-y-3">
+  <div id="mobile-menu" class="hidden lg:hidden bg-corporate-wine border-t border-white/10 px-6 pt-2 pb-6 space-y-3">
     {navItems.map((item) => {
       const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
       return (

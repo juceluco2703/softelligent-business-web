@@ -13,97 +13,158 @@ const {
 
 const metrics = [
   { value: "99.99%", label: "Uptime Garantizado SLA", detail: "En sistemas críticos de negocio" },
-  { value: "-60%", label: "Reducción en Tiempo Batch", detail: "Optimización Oracle SQL & Pro*C" },
+  { value: "-60%", label: "Reducción Tiempo Batch", detail: "Optimización Oracle SQL & Pro*C" },
   { value: "+150", label: "Proyectos Entregados", detail: "Para sector financiero y corporativo" },
-  { value: "100%", label: "Propiedad de Código", detail: "Sin licencias ni ataduras de proveedor" },
+  { value: "100%", label: "Propiedad de Código", detail: "Sin licencias ni ataduras" },
+];
+
+const highlightsList = [
+  { title: "Células Ágiles Dedicadas", desc: "Senior Devs integrados a su cultura" },
+  { title: "Garantía de SLAs", desc: "Respuesta inmediata en entornos misión crítica" },
+  { title: "Dominio Oracle Legacy", desc: "Expertos en Pro*C, C/C++ y PL/SQL nativo" }
 ];
 ---
 
-<section class="relative bg-white text-corporate-midnight pt-14 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
+<section class="relative bg-white text-corporate-midnight pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
   <!-- Minimal Google Store Style Soft Aura -->
-  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-pink-100/40 rounded-full blur-[150px] pointer-events-none"></div>
+  <div class="absolute top-10 right-10 w-[600px] h-[600px] bg-pink-100/40 rounded-full blur-[150px] pointer-events-none"></div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center max-w-4xl mx-auto space-y-8">
+  <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 relative z-10">
+    
+    <!-- 2 Column Asymmetric Layout (Google Store Style) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
-      <!-- Top Executive Badge (Google Store Pill Style) -->
-      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-corporate-wine-soft border border-corporate-wine-border text-corporate-wine text-xs font-bold tracking-widest uppercase shadow-xs">
-        <svg class="w-4 h-4 text-corporate-wine animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-        </svg>
-        <span>{badge}</span>
+      <!-- Left Column (7-8 cols): Content aligned left -->
+      <div class="lg:col-span-7 space-y-6 text-left">
+        
+        <!-- Executive Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-corporate-wine-soft border border-corporate-wine-border text-corporate-wine text-xs font-bold tracking-wider uppercase shadow-xs">
+          <svg class="w-4 h-4 text-corporate-wine animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+          <span>{badge}</span>
+        </div>
+
+        <!-- Main H1 Title -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-corporate-midnight leading-[1.12]">
+          {title.split("en").length > 1 ? (
+            <>
+              {title.split("en")[0]} <span class="text-corporate-wine">en {title.split("en").slice(1).join("en")}</span>
+            </>
+          ) : (
+            title
+          )}
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl">
+          {subtitle}
+        </p>
+
+        <!-- CTA Buttons Aligned Left -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-start gap-4">
+          <a
+            href="/contacto"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-base text-white bg-corporate-wine hover:bg-corporate-wine-light shadow-wine-glow transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>Agendar Diagnóstico Estratégico</span>
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a
+            href="#soluciones"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold text-base text-corporate-midnight bg-corporate-light hover:bg-slate-100 border border-slate-200 transition-all duration-300"
+          >
+            <span>Explorar Soluciones B2B</span>
+          </a>
+        </div>
+
+        <!-- Trust highlights -->
+        <div class="pt-4 flex flex-wrap items-center justify-start gap-6 text-xs text-slate-600 font-medium">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            Células Ágiles Dedicadas
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            Cumplimiento Riguroso SLAs
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </svg>
+            Especialización Oracle Legacy
+          </span>
+        </div>
+
       </div>
 
-      <!-- Main H1 Title -->
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-display text-corporate-midnight leading-[1.12]">
-        {title.split("en").length > 1 ? (
-          <>
-            {title.split("en")[0]} <span class="text-corporate-wine">en {title.split("en").slice(1).join("en")}</span>
-          </>
-        ) : (
-          title
-        )}
-      </h1>
+      <!-- Right Column (5 cols): Executive Panel (Google Store Card Style) -->
+      <div class="lg:col-span-5">
+        <div class="bg-corporate-light border border-slate-200/90 rounded-3xl p-8 shadow-google-card space-y-6 relative overflow-hidden">
+          
+          <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-corporate-wine text-white flex items-center justify-center font-bold text-sm">
+                B2B
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-corporate-midnight font-display">Garantía Enterprise</h3>
+                <p class="text-xs text-slate-500">Softelligent Business Standard</p>
+              </div>
+            </div>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          </div>
 
-      <!-- Transactional Subtitle -->
-      <p class="text-lg sm:text-2xl text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto">
-        {subtitle}
-      </p>
+          <div class="space-y-4">
+            {highlightsList.map((hl) => (
+              <div class="bg-white p-4 rounded-2xl border border-slate-200/80 flex items-start gap-3 shadow-xs">
+                <div class="p-2 rounded-xl bg-corporate-wine-soft text-corporate-wine shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-corporate-midnight font-display">{hl.title}</h4>
+                  <p class="text-xs text-slate-500">{hl.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-      <!-- CTA Buttons (Google Store Pill Style) -->
-      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="/contacto"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full font-bold text-base text-white bg-corporate-wine hover:bg-corporate-wine-light shadow-wine-glow transition-all duration-300 hover:-translate-y-0.5"
-        >
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-          </svg>
-          <span>Agendar Diagnóstico Estratégico</span>
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-        <a
-          href="#soluciones"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base text-corporate-midnight bg-corporate-light hover:bg-slate-100 border border-slate-200 transition-all duration-300"
-        >
-          <span>Explorar Soluciones B2B</span>
-        </a>
-      </div>
+          <div class="pt-2">
+            <a
+              href="/contacto"
+              class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider text-white bg-corporate-wine hover:bg-corporate-wine-light transition-all"
+            >
+              <span>Solicitar Diagnóstico Privado NDA</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
 
-      <!-- Trust highlights -->
-      <div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-600 font-medium">
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-            <path d="m9 12 2 2 4-4" />
-          </svg>
-          Células de Desarrollo Ágil Dedicadas
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            <path d="m9 12 2 2 4-4" />
-          </svg>
-          Cumplimiento Riguroso de SLAs
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-            <ellipse cx="12" cy="5" rx="9" ry="3" />
-            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-          </svg>
-          Especialización en Ambientes Oracle & Legacy
-        </span>
+        </div>
       </div>
 
     </div>
 
-    <!-- Executive Metrics Grid (Google Store Card Style) -->
-    <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Full Width Executive Metrics Grid Below (Google Store Style) -->
+    <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6">
       {metrics.map((m) => (
-        <div class="bg-white border border-slate-200/80 p-8 rounded-3xl text-center shadow-google-card hover:shadow-google-hover transition-all duration-300 group">
+        <div class="bg-white border border-slate-200/80 p-8 rounded-3xl text-left shadow-google-card hover:shadow-google-hover transition-all duration-300 group">
           <div class="text-4xl sm:text-5xl font-extrabold font-display text-corporate-wine group-hover:scale-105 transition-transform">
             {m.value}
           </div>
