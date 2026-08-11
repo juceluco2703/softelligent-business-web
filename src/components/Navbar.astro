@@ -1,10 +1,13 @@
 ---
-const navItems = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Fábrica de Software', href: '/fabrica-de-software' },
-  { name: 'Batch Oracle & Pro*C', href: '/desarrollo-batch-oracle' },
-  { name: 'Consultoría TI', href: '/consultoria-ti' },
-  { name: 'Redes & Telecom', href: '/redes-y-telecomunicaciones' },
+const servicesList = [
+  { name: 'Consultoría TI', href: '/servicios/consultoria-ti', desc: 'Estrategia & Arquitectura Enterprise' },
+  { name: 'Capacitación TI Empresarial', href: '/servicios/capacitacion-ti', desc: 'Workshops & Up-skilling Senior' },
+  { name: 'Infraestructura de TI', href: '/servicios/infraestructura', desc: 'Servidores, Cloud & DRP' },
+  { name: 'Fábrica de Software', href: '/servicios/fabrica-de-software', desc: 'Células Ágiles & Desarrollo A Medida' },
+  { name: 'Automatización de Procesos', href: '/servicios/automatizacion', desc: 'RPA, Scripts & Orquestación Batch' },
+  { name: 'Páginas y Portales Web', href: '/servicios/desarrollo-web', desc: 'Portales B2B & SEO 100/100 PageSpeed' },
+  { name: 'Fábrica de Pruebas QA', href: '/servicios/fabrica-de-pruebas', desc: 'Testing Automatizado & OWASP' },
+  { name: 'Redes y Telecomunicaciones', href: '/servicios/redes-y-telecomunicaciones', desc: 'SD-WAN, Fibra & Ciberseguridad' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -17,7 +20,7 @@ const currentPath = Astro.url.pathname;
       <!-- Brand Logo Original (Concentric Spiral + Softelligent BUSINESS) -->
       <a href="/" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:scale-105 transition-transform shadow-sm">
-          <!-- Concentric Spiral / Circle Logo Icon -->
+          <!-- Concentric Spiral Logo Icon -->
           <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="9" stroke-dasharray="40 10" />
             <circle cx="12" cy="12" r="5" stroke-dasharray="25 8" />
@@ -34,37 +37,87 @@ const currentPath = Astro.url.pathname;
         </div>
       </a>
 
-      <!-- Desktop Navigation (Google Store Pill Style) -->
+      <!-- Desktop Navigation with Services Dropdown -->
       <nav class="hidden lg:flex items-center space-x-1">
-        {navItems.map((item) => {
-          const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
-          return (
-            <a
-              href={item.href}
-              class={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                isActive
-                  ? 'text-white bg-white/20 font-bold border border-white/30 shadow-xs'
-                  : 'text-purple-100 hover:text-white hover:bg-white/10'
-              }`}
-            >
-              {item.name}
-            </a>
-          );
-        })}
+        <a
+          href="/"
+          class={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+            currentPath === '/' ? 'text-white bg-white/20 font-bold border border-white/30 shadow-xs' : 'text-purple-100 hover:text-white hover:bg-white/10'
+          }`}
+        >
+          Inicio
+        </a>
+
+        <!-- Dropdown trigger for 8 Services -->
+        <div class="relative group">
+          <button
+            type="button"
+            class={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              currentPath.startsWith('/servicios') ? 'text-white bg-white/20 font-bold border border-white/30 shadow-xs' : 'text-purple-100 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            <span>Servicios de TI</span>
+            <svg class="w-4 h-4 text-purple-200 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          <!-- Mega Menu Dropdown (8 Services Grid) -->
+          <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[680px] bg-white text-corporate-midnight rounded-3xl p-6 shadow-google-hover border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="text-xs font-bold uppercase tracking-wider text-corporate-wine mb-4 pb-2 border-b border-slate-100 flex items-center justify-between">
+              <span>Catálogo Completo de Servicios de TI B2B</span>
+              <span class="text-[10px] text-slate-400 font-normal">8 Especialidades Enterprise</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              {servicesList.map((s) => (
+                <a
+                  href={s.href}
+                  class="p-3 rounded-2xl hover:bg-corporate-wine-soft border border-transparent hover:border-corporate-wine-border transition-all flex items-start gap-3 group/item"
+                >
+                  <div class="w-8 h-8 rounded-xl bg-corporate-wine text-white flex items-center justify-center shrink-0 text-xs font-bold group-hover/item:scale-105 transition-transform shadow-xs">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold text-corporate-midnight font-display group-hover/item:text-corporate-wine transition-colors">
+                      {s.name}
+                    </div>
+                    <div class="text-[11px] text-slate-500 line-clamp-1">
+                      {s.desc}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="/#matriz-valor"
+          class="px-4 py-2 rounded-full text-sm font-medium text-purple-100 hover:text-white hover:bg-white/10 transition-all"
+        >
+          Propuesta C-Level
+        </a>
+
+        <a
+          href="/#stack-tecnologico"
+          class="px-4 py-2 rounded-full text-sm font-medium text-purple-100 hover:text-white hover:bg-white/10 transition-all"
+        >
+          Ecosistema TI
+        </a>
       </nav>
 
-      <!-- Executive CTA Button (Google Store Pill Button) -->
+      <!-- Executive CTA Button -->
       <div class="hidden sm:flex items-center gap-4">
         <a
           href="/contacto"
           class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm text-corporate-wine bg-white hover:bg-purple-50 shadow-md transition-all duration-300 hover:-translate-y-0.5"
         >
-          <!-- Phone Icon -->
           <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
           <span>Agendar Diagnóstico</span>
-          <!-- Chevron Right -->
           <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -95,21 +148,17 @@ const currentPath = Astro.url.pathname;
 
   <!-- Mobile Navigation Drawer -->
   <div id="mobile-menu" class="hidden lg:hidden bg-corporate-wine border-t border-white/10 px-6 pt-2 pb-6 space-y-3">
-    {navItems.map((item) => {
-      const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
-      return (
+    <div class="text-xs font-bold uppercase tracking-wider text-pink-200 pt-2 pb-1">Servicios de TI B2B</div>
+    <div class="grid grid-cols-1 gap-2">
+      {servicesList.map((s) => (
         <a
-          href={item.href}
-          class={`block px-4 py-3 rounded-xl text-base font-medium transition-all ${
-            isActive
-              ? 'text-white bg-white/20 font-bold border-l-4 border-white'
-              : 'text-purple-100 hover:text-white hover:bg-white/10'
-          }`}
+          href={s.href}
+          class="block px-4 py-2.5 rounded-xl text-sm font-medium text-purple-100 hover:text-white hover:bg-white/10"
         >
-          {item.name}
+          {s.name}
         </a>
-      );
-    })}
+      ))}
+    </div>
     <div class="pt-4 border-t border-white/10">
       <a
         href="/contacto"

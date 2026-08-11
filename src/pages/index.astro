@@ -7,32 +7,60 @@ import ContactForm from '../components/ContactForm.astro';
 
 const servicesSummary = [
   {
-    type: "layers",
-    title: "Fábrica de Software a la Medida",
-    description: "Células ágiles dedicadas de ingenieros senior para construir soluciones empresariales escalables con 100% de propiedad de código.",
-    href: "/fabrica-de-software",
-    highlights: ["Metodología Agile/Scrum", "Arquitecturas en Microservicios", "Cero Deuda Técnica"]
-  },
-  {
-    type: "database",
-    title: "Desarrollo Batch Oracle SQL & Pro*C",
-    description: "Especialización en procesamiento masivo de datos, reducción de ventanas batch nocturnas y tuning de base de datos mission-critical.",
-    href: "/desarrollo-batch-oracle",
-    highlights: ["Pro*C / C++ Native Integration", "Pl/SQL Advanced Tuning", "Shell Scripts de Alta Velocidad"]
-  },
-  {
     type: "cpu",
-    title: "Consultoría de TI & Arquitectura",
-    description: "Evaluación independiente de sistemas, estrategia de migración cloud, refactorización legacy y auditoría de ciberseguridad.",
-    href: "/consultoria-ti",
-    highlights: ["Modernización Legacy", "Cloud Native Strategy", "Auditoría de Rendimiento"]
+    title: "Consultoría TI",
+    description: "Evaluación objetiva de arquitectura de sistemas, modernización legacy, auditoría de código y estrategia de transformación digital.",
+    href: "/servicios/consultoria-ti",
+    highlights: ["Auditoría de Arquitectura", "Modernización Legacy", "Estrategia Cloud Native"]
+  },
+  {
+    type: "academic",
+    title: "Capacitación TI Empresarial",
+    description: "Formación especializada a la medida para equipos de ingeniería senior en Oracle SQL, Pro*C, Cloud y DevSecOps.",
+    href: "/servicios/capacitacion-ti",
+    highlights: ["Workshops Oracle & SQL", "Cloud & Microservicios", "Cursos DevSecOps"]
+  },
+  {
+    type: "server",
+    title: "Infraestructura de TI",
+    description: "Diseño, virtualización de servidores enterprise, cloud computing híbrido y planes de recuperación ante desastres (DRP).",
+    href: "/servicios/infraestructura",
+    highlights: ["VMware & Hipervisores", "Arquitectura Híbrida", "Soporte 24/7 & DRP"]
+  },
+  {
+    type: "layers",
+    title: "Fábrica de Software",
+    description: "Células ágiles dedicadas de ingenieros Senior para construir aplicaciones a la medida con 100% de propiedad intelectual.",
+    href: "/servicios/fabrica-de-software",
+    highlights: ["Células Ágiles (Squads)", "Desarrollo Llave en Mano", "Cero Deuda Técnica"]
+  },
+  {
+    type: "workflow",
+    title: "Automatización de Procesos",
+    description: "Robots de software RPA, automatización de tareas batch nocturnas de alto volumen e integración de flujos de negocio.",
+    href: "/servicios/automatizacion",
+    highlights: ["RPA & Robots de Software", "Orquestación Batch Data", "APIs & ERP Integration"]
+  },
+  {
+    type: "globe",
+    title: "Páginas y Portales Web",
+    description: "Portales corporativos y sitios B2B con 100/100 en Google PageSpeed, SEO técnico avanzado y conversión C-Level.",
+    href: "/servicios/desarrollo-web",
+    highlights: ["SEO B2B 100/100 Speed", "Portales Transaccionales", "CMS & Headless Web"]
+  },
+  {
+    type: "shield-check",
+    title: "Fábrica de Pruebas QA",
+    description: "Aseguramiento de calidad, pruebas automatizadas, testing de estrés masivo y auditorías de seguridad OWASP.",
+    href: "/servicios/fabrica-de-pruebas",
+    highlights: ["QA Automation (Cypress)", "Stress & Load Testing", "Auditoría OWASP Top 10"]
   },
   {
     type: "network",
-    title: "Redes & Telecomunicaciones",
-    description: "Diseño e implementación de infraestructura física y lógica corporativa, SD-WAN, enlaces de alta velocidad y SOC/NOC.",
-    href: "/redes-y-telecomunicaciones",
-    highlights: ["Infraestructura Corporativa", "Hardening & Ciberseguridad", "SOP & Monitoreo 24/7"]
+    title: "Redes y Telecomunicaciones",
+    description: "Cableado estructurado enterprise, redes SD-WAN, interconexión de sucursales, ciberseguridad perimetral y NOC/SOC.",
+    href: "/servicios/redes-y-telecomunicaciones",
+    highlights: ["Cableado 6A/7 & Fibra", "Redes SD-WAN VPN", "Monitoreo NOC/SOC 24/7"]
   }
 ];
 
@@ -45,35 +73,58 @@ const stats = [
 ---
 
 <Layout
-  title="Softelligent Business | Fábrica de Software & Desarrollo Batch Oracle SQL Pro*C"
-  description="Fábrica de software a la medida, desarrollo batch mission-critical en Oracle SQL, Pro*C, consultoría de arquitectura de TI y redes corporativas en México."
+  title="Softelligent Business | Catálogo Integral de Servicios de TI B2B en México"
+  description="Fábrica de software B2B, consultoría TI, infraestructura, capacitación empresarial, automatización de procesos, portales web, QA y redes corporativas."
 >
   
   <!-- Hero Section (Asymmetric Left Aligned) -->
   <HeroSection />
 
-  <!-- Solutions Summary Section (Full Width Google Store Style) -->
+  <!-- 8 Services Grid (Google Store Full Width Layout) -->
   <section id="soluciones" class="py-20 bg-corporate-light border-y border-slate-200/60">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       
       <!-- Left Aligned Header -->
       <div class="max-w-3xl mb-12 space-y-3 text-left">
         <span class="text-xs font-bold uppercase tracking-widest text-corporate-wine bg-corporate-wine-soft px-4 py-1.5 rounded-full border border-corporate-wine-border inline-block">
-          Soluciones B2B Especializadas
+          Catálogo Integral de Servicios TI B2B
         </span>
         <h2 class="text-3xl sm:text-5xl font-extrabold text-corporate-midnight font-display">
-          Ingeniería de Software e Infraestructura Enterprise
+          Soluciones de Ingeniería e Infraestructura de Alto Nivel
         </h2>
         <p class="text-slate-600 text-base sm:text-lg">
-          Servicios diseñados para elevar la velocidad operativa, reducir riesgos y garantizar la continuidad tecnológica de su negocio.
+          Cubrimos el ciclo completo de tecnología de su organización con 8 especialidades diseñadas para maximizar el rendimiento operativo.
         </p>
       </div>
 
+      <!-- 8 Services 4-Column Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {servicesSummary.map((s) => (
           <div class="bg-white border border-slate-200/90 hover:border-corporate-wine rounded-3xl p-7 transition-all duration-300 shadow-google-card hover:shadow-google-hover group flex flex-col justify-between">
             <div>
+              <!-- Icon Container -->
               <div class="w-12 h-12 rounded-2xl bg-corporate-wine text-white flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform">
+                {s.type === 'cpu' && (
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <rect width="16" height="16" x="4" y="4" rx="2" />
+                    <rect width="6" height="6" x="9" y="9" rx="1" />
+                    <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" />
+                  </svg>
+                )}
+                {s.type === 'academic' && (
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                  </svg>
+                )}
+                {s.type === 'server' && (
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+                    <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+                    <line x1="6" x2="6.01" y1="6" y2="6" />
+                    <line x1="6" x2="6.01" y1="18" y2="18" />
+                  </svg>
+                )}
                 {s.type === 'layers' && (
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <polygon points="12 2 2 7 12 12 22 7 12 2" />
@@ -81,18 +132,22 @@ const stats = [
                     <polyline points="2 12 12 17 22 12" />
                   </svg>
                 )}
-                {s.type === 'database' && (
+                {s.type === 'workflow' && (
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <ellipse cx="12" cy="5" rx="9" ry="3" />
-                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                   </svg>
                 )}
-                {s.type === 'cpu' && (
+                {s.type === 'globe' && (
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <rect width="16" height="16" x="4" y="4" rx="2" />
-                    <rect width="6" height="6" x="9" y="9" rx="1" />
-                    <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" />
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" x2="22" y1="12" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                )}
+                {s.type === 'shield-check' && (
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
                   </svg>
                 )}
                 {s.type === 'network' && (
@@ -105,12 +160,16 @@ const stats = [
                   </svg>
                 )}
               </div>
+
+              <!-- Title & Desc -->
               <h3 class="text-xl font-bold text-corporate-midnight font-display mb-3 group-hover:text-corporate-wine transition-colors leading-tight">
                 {s.title}
               </h3>
               <p class="text-slate-600 text-xs leading-relaxed mb-6">
                 {s.description}
               </p>
+
+              <!-- Highlights -->
               <ul class="space-y-2 mb-6">
                 {s.highlights.map((h) => (
                   <li class="flex items-center gap-2 text-xs font-semibold text-slate-700">
@@ -124,6 +183,7 @@ const stats = [
               </ul>
             </div>
 
+            <!-- Footer Link -->
             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
               <a
                 href={s.href}

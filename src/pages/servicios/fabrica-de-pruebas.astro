@@ -1,0 +1,135 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const qaServices = [
+  {
+    title: "Pruebas de Software Automatizadas (QA Automation)",
+    desc: "Scripts de prueba automatizados con Selenium, Playwright y Cypress para regresiones continuas en pipelines CI/CD.",
+    type: "play"
+  },
+  {
+    title: "Pruebas de Rendimiento & Carga Masiva (Load & Stress Testing)",
+    desc: "Simulación de miles de usuarios concurrentes y benchmarking de throughput de bases de datos con JMeter y K6.",
+    type: "gauge"
+  },
+  {
+    title: "Pruebas de Seguridad & Análisis de Vulnerabilidades",
+    desc: "Escaneos de seguridad estáticos (SAST) y dinámicos (DAST) bajo los estándares OWASP Top 10.",
+    type: "shield-check"
+  },
+  {
+    title: "Pruebas de Regresión Batch & Data Quality",
+    desc: "Validación de integridad de datos, conciliación de registros masivos y verificación de procesos batch nocturnos.",
+    type: "database"
+  }
+];
+---
+
+<Layout
+  title="Fábrica de Pruebas QA y Testing de Software B2B | Softelligent Business"
+  description="Fábrica de pruebas QA y testing de software en México. Pruebas automatizadas, pruebas de rendimiento, pruebas de seguridad OWASP y control de calidad de software."
+>
+  
+  <!-- Hero -->
+  <section class="bg-corporate-wine text-white pt-16 pb-20 border-b border-white/10 relative overflow-hidden">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="max-w-3xl space-y-6 text-left">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-purple-100 text-xs font-bold uppercase tracking-wider">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          <span>Garantía de Calidad Enterprise</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-extrabold font-display leading-tight">
+          Fábrica de Pruebas QA y Testing de Software B2B
+        </h1>
+
+        <p class="text-lg text-purple-100 leading-relaxed">
+          Aseguramos la calidad, estabilidad y seguridad de sus aplicaciones antes de su despliegue en producción con células QA independientes.
+        </p>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a
+            href="#diagnostico-form"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-corporate-wine bg-white hover:bg-purple-50 shadow-md transition-all"
+          >
+            <span>Cotizar Fábrica de Pruebas</span>
+            <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-20 bg-white">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      
+      <div class="max-w-3xl mb-12 space-y-3 text-left">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-corporate-midnight font-display">
+          Servicios de Aseguramiento de Calidad (QA)
+        </h2>
+        <p class="text-slate-600 text-base">
+          Metodologías rigurosas de testing funcional y no funcional para erradicar fallas críticas en sistemas enterprise.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {qaServices.map((s) => (
+          <div class="bg-corporate-light p-8 rounded-3xl border border-slate-200/90 hover:border-corporate-wine transition-all flex items-start gap-5 shadow-google-card hover:shadow-google-hover">
+            <div class="w-12 h-12 rounded-2xl bg-corporate-wine text-white flex items-center justify-center shrink-0 shadow-sm">
+              {s.type === 'play' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              )}
+              {s.type === 'gauge' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="m12 14 4-4" />
+                  <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+                </svg>
+              )}
+              {s.type === 'shield-check' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              )}
+              {s.type === 'database' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              )}
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-corporate-midnight font-display mb-2">{s.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section id="diagnostico-form" class="py-20 bg-corporate-light">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      <ContactForm
+        title="Solicite una Propuesta de Fábrica de Pruebas QA"
+        subtitle="Analizaremos el estado de sus aplicaciones y propondremos un plan de automatización y pruebas de estrés."
+        defaultService="Fabrica de Pruebas QA"
+      />
+    </div>
+  </section>
+
+</Layout>

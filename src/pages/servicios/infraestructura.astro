@@ -1,0 +1,139 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const infraFeatures = [
+  {
+    title: "Servidores & Virtualización Enterprise",
+    desc: "Instalación, configuración y migración de hipervisores VMware, Nutanix y Proxmox para data centers corporativos.",
+    type: "server"
+  },
+  {
+    title: "Arquitectura Híbrida & Cloud Computing",
+    desc: "Integración segura de infraestructura on-premise con nubes privadas y públicas (AWS, Azure, Google Cloud).",
+    type: "cloud"
+  },
+  {
+    title: "Planes de Recuperación ante Desastres (DRP)",
+    desc: "Diseño de esquemas de réplica contínua, respaldos inmutables y alta disponibilidad para continuidad de negocio.",
+    type: "shield"
+  },
+  {
+    title: "Monitoreo & Soporte de Infraestructura 24/7",
+    desc: "Supervisión proactiva de salud de servidores, almacenamiento SAN/NAS y rendimiento de la capa de cómputo.",
+    type: "cpu"
+  }
+];
+---
+
+<Layout
+  title="Consultoría e Infraestructura de TI B2B | Softelligent Business"
+  description="Servicios de consultoría en infraestructura TI en México, virtualización de servidores, cloud computing, data centers y soporte gestionado 24/7."
+>
+  
+  <!-- Hero -->
+  <section class="bg-corporate-wine text-white pt-16 pb-20 border-b border-white/10 relative overflow-hidden">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="max-w-3xl space-y-6 text-left">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-purple-100 text-xs font-bold uppercase tracking-wider">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+            <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+            <line x1="6" x2="6.01" y1="6" y2="6" />
+            <line x1="6" x2="6.01" y1="18" y2="18" />
+          </svg>
+          <span>Infraestructura Empresarial</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-extrabold font-display leading-tight">
+          Infraestructura de TI y Cloud Computing de Alta Disponibilidad
+        </h1>
+
+        <p class="text-lg text-purple-100 leading-relaxed">
+          Diseñamos, desplegamos y administramos la infraestructura tecnológica que sostiene las operaciones críticas de su organización.
+        </p>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a
+            href="#diagnostico-form"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-corporate-wine bg-white hover:bg-purple-50 shadow-md transition-all"
+          >
+            <span>Evaluar Mi Infraestructura</span>
+            <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid Features -->
+  <section class="py-20 bg-white">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      
+      <div class="max-w-3xl mb-12 space-y-3 text-left">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-corporate-midnight font-display">
+          Soluciones Integrales de Infraestructura Tecnológica
+        </h2>
+        <p class="text-slate-600 text-base">
+          Aseguramos la máxima resiliencia, rendimiento y seguridad para sus plataformas de servidores e hipervisores.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {infraFeatures.map((f) => (
+          <div class="bg-corporate-light p-8 rounded-3xl border border-slate-200/90 hover:border-corporate-wine transition-all flex items-start gap-5 shadow-google-card hover:shadow-google-hover">
+            <div class="w-12 h-12 rounded-2xl bg-corporate-wine text-white flex items-center justify-center shrink-0 shadow-sm">
+              {f.type === 'server' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+                  <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+                  <line x1="6" x2="6.01" y1="6" y2="6" />
+                  <line x1="6" x2="6.01" y1="18" y2="18" />
+                </svg>
+              )}
+              {f.type === 'cloud' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                </svg>
+              )}
+              {f.type === 'shield' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              )}
+              {f.type === 'cpu' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <rect width="16" height="16" x="4" y="4" rx="2" />
+                  <rect width="6" height="6" x="9" y="9" rx="1" />
+                  <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" />
+                </svg>
+              )}
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-corporate-midnight font-display mb-2">{f.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{f.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section id="diagnostico-form" class="py-20 bg-corporate-light">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      <ContactForm
+        title="Agende un Diagnóstico de Infraestructura de TI"
+        subtitle="Analizaremos la salud de sus servidores, capacidad de almacenamiento y arquitectura cloud."
+        defaultService="Infraestructura TI"
+      />
+    </div>
+  </section>
+
+</Layout>

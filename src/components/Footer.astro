@@ -1,9 +1,13 @@
 ---
 const services = [
-  { name: 'Fábrica de Software a la Medida', href: '/fabrica-de-software' },
-  { name: 'Desarrollo Batch Oracle SQL & Pro*C', href: '/desarrollo-batch-oracle' },
-  { name: 'Consultoría de Arquitectura TI', href: '/consultoria-ti' },
-  { name: 'Redes y Telecomunicaciones', href: '/redes-y-telecomunicaciones' },
+  { name: 'Consultoría TI', href: '/servicios/consultoria-ti' },
+  { name: 'Capacitación TI Empresarial', href: '/servicios/capacitacion-ti' },
+  { name: 'Infraestructura de TI', href: '/servicios/infraestructura' },
+  { name: 'Fábrica de Software', href: '/servicios/fabrica-de-software' },
+  { name: 'Automatización de Procesos', href: '/servicios/automatizacion' },
+  { name: 'Páginas y Portales Web', href: '/servicios/desarrollo-web' },
+  { name: 'Fábrica de Pruebas QA', href: '/servicios/fabrica-de-pruebas' },
+  { name: 'Redes y Telecomunicaciones', href: '/servicios/redes-y-telecomunicaciones' },
 ];
 
 const quickLinks = [
@@ -42,7 +46,7 @@ const quickLinks = [
           </div>
         </div>
         <p class="text-purple-100/80 text-sm leading-relaxed">
-          Socio tecnológico de alto rendimiento para corporativos e instituciones financieras. Especialistas en desarrollo batch mission-critical, arquitectura cloud y fábrica de software a la medida.
+          Socio tecnológico integral para empresas de alto rendimiento. Especialistas en consultoría TI, fábrica de software B2B, infraestructura, QA y automatización de procesos empresariales.
         </p>
         <div class="flex items-center gap-3 pt-2">
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors" aria-label="LinkedIn">
@@ -58,40 +62,26 @@ const quickLinks = [
         </div>
       </div>
 
-      <!-- Col 2: Services -->
-      <div>
+      <!-- Col 2: 8 Services -->
+      <div class="lg:col-span-2">
         <h3 class="text-white font-semibold text-base font-display mb-4 flex items-center gap-2">
-          <span>Soluciones B2B Enterprise</span>
+          <span>Catálogo de Servicios de TI B2B</span>
         </h3>
-        <ul class="space-y-2.5 text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-sm">
           {services.map((service) => (
-            <li>
+            <div>
               <a href={service.href} class="text-purple-100/80 hover:text-white transition-colors inline-flex items-center gap-1 group">
                 <span>{service.name}</span>
                 <svg class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                   <path d="M7 17L17 7M17 7H7M17 7V17" />
                 </svg>
               </a>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
 
-      <!-- Col 3: Quick Links -->
-      <div>
-        <h3 class="text-white font-semibold text-base font-display mb-4">Acceso Rápido</h3>
-        <ul class="space-y-2.5 text-sm">
-          {quickLinks.map((link) => (
-            <li>
-              <a href={link.href} class="text-purple-100/80 hover:text-white transition-colors">
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Col 4: Executive Contact -->
+      <!-- Col 3: Executive Contact -->
       <div class="space-y-3">
         <h3 class="text-white font-semibold text-base font-display mb-4">Contacto Directivo</h3>
         <div class="flex items-start gap-3 text-sm text-purple-100/80">

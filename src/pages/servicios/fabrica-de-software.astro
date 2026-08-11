@@ -1,0 +1,190 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const modalities = [
+  {
+    title: "Células Dedicadas (Squads Agiles)",
+    desc: "Equipos multidisciplinarios (Scrum Master, Senior Devs, QA, DevOps) integrados 100% a la cultura y velocidad de su organización.",
+    tag: "Alta Escalabilidad"
+  },
+  {
+    title: "Desarrollo Llave en Mano",
+    desc: "Construcción completa de proyectos con alcance, tiempos y entregables cerrados con garantía de calidad y SLA de soporte.",
+    tag: "Alcance Definido"
+  },
+  {
+    title: "Co-Sourcing Tecnológico",
+    desc: "Reforzamiento de sus células internas con especialistas Senior en arquitecturas complejas, microservicios y refactorización.",
+    tag: "Especialización"
+  }
+];
+
+const pillars = [
+  {
+    type: "code",
+    title: "Código Limpio y Mantenible",
+    desc: "Prácticas estrictas de Clean Architecture, TDD y revisiones de código cruzadas para erradicar la deuda técnica."
+  },
+  {
+    type: "users",
+    title: "Talento Senior Verificado",
+    desc: "Ingenieros con más de 8 años de experiencia en proyectos bancarios, logísticos y transaccionales masivos."
+  },
+  {
+    type: "shield",
+    title: "Propiedad Intelectual Total",
+    desc: "El 100% del código fuente, documentación y artefactos pertenecen a su empresa desde la primera línea producida."
+  },
+  {
+    type: "clock",
+    title: "Integración Inmediata (Time-to-Value)",
+    desc: "Despliegue operativo en menos de 10 días hábiles con metodologías estándar (Jira, Git, CI/CD)."
+  }
+];
+---
+
+<Layout
+  title="Fábrica de Software B2B y Desarrollo a la Medida | Softelligent Business"
+  description="Fábrica de software B2B en México con células dedicadas de ingenieros Senior para proyectos enterprise a la medida. Calidad de código garantizada y 100% IP de su empresa."
+>
+  
+  <!-- Subpage Hero -->
+  <section class="bg-corporate-wine text-white pt-16 pb-20 border-b border-white/10 relative overflow-hidden">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="max-w-3xl space-y-6 text-left">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-purple-100 text-xs font-bold uppercase tracking-wider">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+            <polyline points="2 17 12 22 22 17" />
+            <polyline points="2 12 12 17 22 12" />
+          </svg>
+          <span>Fábrica de Software B2B</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-extrabold font-display leading-tight">
+          Fábrica de Software B2B y Células Dedicadas de Desarrollo
+        </h1>
+
+        <p class="text-lg text-purple-100 leading-relaxed">
+          Construimos aplicaciones empresariales escalables, plataformas transaccionales y microservicios con equipos dedicados que se adaptan a la gobernanza tecnológica de su empresa.
+        </p>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a
+            href="#diagnostico-form"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-corporate-wine bg-white hover:bg-purple-50 shadow-md transition-all"
+          >
+            <span>Cotizar Célula de Software</span>
+            <svg class="w-4 h-4 text-corporate-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      
+      <div class="max-w-3xl mb-12 space-y-3 text-left">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-corporate-midnight font-display">
+          Pilares de Nuestra Fábrica de Software
+        </h2>
+        <p class="text-slate-600 text-base">
+          Garantizamos excelencia en la ejecución técnica para que su equipo directivo se enfoque en la estrategia de negocio.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {pillars.map((p) => (
+          <div class="bg-corporate-light p-6 rounded-3xl border border-slate-200/80 hover:border-corporate-wine transition-all shadow-google-card hover:shadow-google-hover">
+            <div class="w-12 h-12 rounded-2xl bg-corporate-wine text-white flex items-center justify-center mb-4 shadow-sm">
+              {p.type === 'code' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              )}
+              {p.type === 'users' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              )}
+              {p.type === 'shield' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              )}
+              {p.type === 'clock' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              )}
+            </div>
+            <h3 class="text-lg font-bold text-corporate-midnight font-display mb-2">{p.title}</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modalities Section -->
+  <section class="py-20 bg-corporate-light border-y border-slate-200/60">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      
+      <div class="max-w-3xl mb-12 space-y-3 text-left">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-corporate-midnight font-display">
+          Modalidades de Contratación B2B
+        </h2>
+        <p class="text-slate-600 text-base">
+          Seleccione el esquema que mejor responda al ritmo de crecimiento y modelo financiero de su organización.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {modalities.map((m) => (
+          <div class="bg-white p-8 rounded-3xl border border-slate-200/90 shadow-google-card hover:shadow-google-hover transition-all flex flex-col justify-between">
+            <div>
+              <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-corporate-wine bg-corporate-wine-soft px-3 py-1 rounded-full border border-corporate-wine-border mb-4">
+                {m.tag}
+              </span>
+              <h3 class="text-xl font-bold text-corporate-midnight font-display mb-3">{m.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-6">{m.desc}</p>
+            </div>
+            <a href="#diagnostico-form" class="text-xs font-bold text-corporate-wine hover:text-corporate-wine-light inline-flex items-center gap-1">
+              <span>Solicitar Propuesta</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section id="diagnostico-form" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      <ContactForm
+        title="Solicite un Diagnóstico para su Proyecto de Software"
+        subtitle="Analizaremos el alcance de sus requerimientos y prepararemos una propuesta técnica y económica adaptada a sus objetivos."
+        defaultService="Fabrica de Software"
+      />
+    </div>
+  </section>
+
+</Layout>
